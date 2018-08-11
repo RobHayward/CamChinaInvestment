@@ -1,0 +1,62 @@
+This is a paper from MSCI https://www.msci.com/www/blog-posts/using-factors-in-international/0775675812
+Using factors in international investing. 
+There has been a steady errosion of home bias, leading to an increase in mandates for active and passive international funds. Investment committees have become more comfortable about using factros as a complement to core passive and active investment. Do factors behave the same way outside the US as at home? This study finds that minimum volatility and momentum are 'global factors' while quality, dividend yield and size show little correlation with the US factors. The study is of MSCI ex-US benchmark. This is developed markets. There are three aspects to the study: a review of risk and return of these factros compared to the parent index; whether factros can act as hedges when international markets under-perform; relationship between international factros and active managers. 
+
+The 6 MSCI factors are low volatility, size, momentum, quality, dividend yield and value. 
+
+Factor, Ann Ret (Int), Ann Vol, Ann Ret (US), Ann Vol
+Low voli, 9.5, 11.8, 7.8, 11.0
+Size (equal weighta, 8.2, 17.2, 8.3, 17.0
+Momentum, 6.9, 16.0, 9.4, 14.2
+Quality, 7.8, 16.6, 6.8, 13.2
+High Dividend, 7.3, 17.5, 7.6, 12.8, 
+Value, 8.3, 18.7, 8.8, 16.7
+Benchmark, 5.7, 16.7, 6.4, 14.2
+
+May 2001 to Sep 2017. 
+
+Correlation between factors (table 2).
+Global factros like minimum voltility and momentum are more closely linked across markets. Investors Looking for lower risk or trending markets  are not usually internationally constrained. Fundamental factros are more local and hetrogenos. 
+ 
+
+Bond diversification
+French and Poterba (1991) find home bias in equity investment.  This has been repeated in many studies: Coeurbacier and Rey (2011), Mishra (2012). Also Burger and Warnock (2003) and Polwitoon and Tawatnuntachai (2006) have also looked at bonds. In either case, Perold and Shulman (1988) introduce the term 'free lunch' and Levich (2001) show that enhanced returns with lower risk can be achieved with international diversification. There are five main causes sugggested for the home bias: Exchange rate risk (Hau and Rey (2004) and Gournichas and Rey (2005)); Transaction costs (Tesar and Werner (1995); Information asymmetries (Ahearne et al. 2004); Geographical proximity Portes and Rey (2005); Behavioural (Huberman, 2001).  
+
+There are two approches to the test of diversification: the model based and return based. The model based uses the International Asset Pricing Model (ICAPM) - Sharpe (1964). Asset allocation is based on international asset capitalisation; the return based uses time series and optimized the allocations according to statistical properties.  Constraints on international investment have eased in most cases. Overtime some diversificati9on has been see but this has tended to be localised and there is a portfolio version of the gravity model. For example, US investors have increased their investment in Canadian equities to the point where they are overweight relative to weight that would be requiered by capitalisation see Tesar Werner (1995). Polwitoon and Tawatnuntachai (2006) assessed the performance of US bond funds relative to a diversified fund for the period 1993 to 2004 and found that international diversification could increase returns by between 0.5% and 1.0% per annum with no increase in risk.
+
+It is possible that some reduction in the allocation to international bond funds is the result of exchange rate risk.  Exchange rate risk can be hedged.  This can be done in two ways: passive and active.  Passive hedging would make a decision to either hedge or not hedge; active hedging would seek to hedge at the opportune moment. ASIDE: this is currency overlay.  Is currency an additional asset class? The general consensus is that active management is not successful and increases costs while passive hedging may be effective. Perold and Schulman (1988) show that US investors would achieve the same return with lower risk if international diversification were accompanied by currency hedge. Levich (2001) finds the same for bond investments in the period 1997-1990.
+
+There is a question of whether correlation has increased over time. Hunter and Simon (2004) look at US, German, UK and Japanese bond markets for the period 1992-2002 and find that there are diversification opportunities for US investors wtih a currency hedge, that correlations have increased but are less than that for equities and that the US, German and UK makets are more similar. 
+
+The Euro eliminated exchange rate risk. Lane (2006) studies changes in the composition of European portfolios during the years 1997 to 2004 and found that cross country investmetn among Euro zone members is much greater than that of other country pairs. HaselMann and Herwartz (2010) studied German investors in the period 1980 to 2003 and found that German bond investment fell by 17 percent and investment in other Euro markets increased by 15%. ASIDE: is this the convergence trade?
+
+
+From Research Affiliates:  Where is the Golbal Economy Going? 
+https://www.researchaffiliates.com/en_us/publications/articles/682-where-is-the-global-economy-going.html
+Yield curve slopes and equity market returns can be used to nowcast the economy. These signals suggest that a number of markets (such as Japan, US and Germany) are entering the correction phase of the business cycle. There are a number of concerns ahead: trade wars, Brexit, poliltical concerns in Germany and Italy.
+
+Nowcasting is an increasingly important tool for the investor looking at market timing. By the time the GDP data has been released or the NBER has identified a downturn, it is too late. The slope of the yield curve will be at the steepest when the economy is rebounding from a recession and it flattens or inverts when the recovery looses momentum. The current flattening of the yield curve started in 2017 and has brough the curve to the falttest point since 2005. There are two measures of the business cycle used here: OECD output-gap and the St. Louis Fed slowdown-expansion phases. Given these four signals, there are four phases: bull, correction, bear, rebound.  There are interesting pictures for Germany, Japan, US and UK. The curve is very good at predicting corrections (flat average of 0.6 for US) and rebounds (steep average of 2.2%). 
+
+Using past return there is a comparison of the return on equity over the the last 6 months and the average return over a longer period. The period is April 1991 to December 2017. 
+
+International Portfolio Diversification
+https://gbr.pepperdine.edu/2010/08/benefits-of-international-portfolio-diversification/
+International correlation increases after exigenous shocks. Diversification benefits are reduced after these events. Developments that have increased teh likelyhood of synchronisation of economies and markets: the development of multinational corporations and international supply chains; advances in technology; deregulation of fnancial systems; increase in international capital flows; abolishment of foreign exchange controls ASIDE: are the last few the same?  
+
+This is a study of German, Japanese and US markets. Madura found that correlations had increased over time. Forbes and Rigobon tested contagion during the 1987 Asian crisis. Longin and Solnik () and Meric and Meric () have looked at the clustering of correlation. 
+
+IndustryCountry
+JLM Marcelo and JLM Quiros and JL Martins, 2013, The role of country and industry factors during volatile times, Journal of International Finanical Markets, Institutions and Money, Vol. 26. pp 273-290. 
+Are sector effects more important than country effects? The results suggest that industry is more important than country.  Countries tend to move together during volatile periods suggests that industry diversificaton may provide more benefit in volatile times. However, countries do well in normal times. The solution is to diversify across coutnries and industries. 
+
+The rise of globalisation raises the question of whether diversification should concentate on countries of coinsider the whole world and concentrate on industries. The host of evidence suggests that industry effects have become more important relative to couhtry effects. Fridman (1998) finds that there is increased correlation amongst European countries.  This is supported by subsequent studies. It suggests that there should be more focus on industries - Baca et al. (2000), Cavaliga et al. (2000). This is also accepted by Industry.  Many companies are internati0onal in tehir producction and sales. EMU is an example.  However, the 2010 debt crisis shows that industry risk has not entirely disappeared. However, Brook s and De Negro (2002 and 2004) suggest that some of this may have come about as a result of the dot.com bubble and it deflation.  They find that there is little change without tech.  This report finds an increased industry effect even outside of tech.  There is increased evidence that volatilty means that correlations move towards unity.  THere are a number of high risk periolds in this sample: Asian crisi, LTCM, 9/11 and the dot.com collapse. 
+
+Grimold et al. (1989) finds that 'most countries are more important than most industries but the most important industries are more important than the least important countries'. Baca et al. (2000), Cavaliga et al. (2000) in their study of 36 sectors and 21 countries between 1986 and 1999 find that indstries have become more important in the last 5 years.  However, Cheng et al (2005) find that country effects are still very important in emerging economies. However, in the Asian financial crisis of 1987, the shock was translated from one country to another.  ASIDE: risk on and risk off.   
+
+The method is to use the Heston and Rouwenhorst (1994) equation
+
+r_it = \alpha_it + \gamma_kt + \delta_jt + varepsilon_t
+
+where r is the return on security i and time t, \alpha is a term common to all European stocks, \gamma and \delta are pure country (k) and industry (j) effects. The method has been criticised by Brooks and De Degro (2002) as it is rather rigid. This will provide the country factor and industry factor returns. This method can produce a time series of coefficients that can be averaged to get a general effect and assessed for changes in the relative importance. Three time periods are assessed: Jan 1990 to Dec 1998, Jan 1999 to Dec 2002 and Jan 2003 to Dec 2008. Tables 2 and 3 show the correlation of countries and industries. However, these correlations mix country and industry effects and are the average for the whole period. UK has the smallest country effect (0.49) followed by France (0.53) while Portugal (2.26) and Italy (2.2) and Spain (1.79) are large. For the industries telecommunication is largest (4.83), followed by technology (2.89), while industrials (0.07), consumer services (0.09) and financials (0.15) are much lower. The average effects for country and industry are 1.17 and 1.18 respectively. There is a large movement over time. In the first period, country effects dominate, in the second the industry dominate (with technology and telecommunications to teh forefron), in the final period, they are about the same.  Table 5 gives a summary of results from various studies.  
+
+
