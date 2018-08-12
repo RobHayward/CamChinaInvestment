@@ -1,2 +1,9 @@
 *.pdf
 .Rproj.user
+*.Rproj
+*.gz
+*.RDate
+*/cache/*
+.todo
+*.xls
+*.xlsx
