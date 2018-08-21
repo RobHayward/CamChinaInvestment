@@ -15,7 +15,7 @@
 \usepackage{amsmath}
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows}
-\usepackage{adjustbox}
+%\usepackage{adjustbox}
 \tikzstyle{block} = [rectangle, rounded corners, minimum width=3cm, 
   minimum height= 2cm, text centered, text width = 2.8cm, draw = black, fill = green!30]
 \tikzstyle{arrow} = [thick, ->, >=stealth]
@@ -39,7 +39,7 @@
   \end{frame}
 }
 % Title and author information
-\title{Exchange Traded Funds}
+\title{International Asset Allocation}
 \author{Rob Hayward}
 \date{September 2018}
 \begin{document}
@@ -331,481 +331,186 @@ The impossibility of informationally efficient markets
 \end{itemize}
 \end{frame}
 
-\section{Reasons for ETF growth}
-\begin{frame}{Basic ETF structure}
+\section{International Investment}
+
+\begin{frame}{Home bias}
+	French and Poterba (1991) find home bias in equity investment
 \begin{itemize}[<+-| alert@+>]
-	\item They are can set up as unit trusts or mutual funds
+		\pause
+	\item Lower risk can be achievde for same return with the use of international diversification
+	\item It is a result that has been repeated many times
 		\begin{itemize}
-			\item mutual funds allow reinvestment of dividends and loaning of securities and assets
+				\item Coeurbacier and Rey (2011)
+				\item Mishra (2012)
+				\item Berger and Warnock (2003)
+				\item Polwitoon and Tawatnuntachai (2006)
 		\end{itemize}
-	\item 
+	\item Across asset classes
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Failure of Active Management}
-\begin{itemize}[<+-| alert@+>]
-\pause
-\item Many studies find that active managers are not successful on average
-\begin{itemize}
-\item Malkiel (1995), Gruber (1996), Wermers (2000, 2003), and Jones
-and Wermers (2011)
-\item Morningstar: only 16.9\% of US large-growth managers were able to beat their passive counterparts over the 10 year period
-\end{itemize}
-\item Cost and fees are a major factor
-\item There are exceptions
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Effective and efficient Vehicle}
-	They provide the best and open-ended and close-ended funds:
-	\pause
-\begin{itemize}[<+-| alert@+>]
-	\item Open-ended: 
-		\begin{itemize}
-			\item open-ened invstment vehicle
-			\item new shares can be created
-			\item secondary market on closing price
-		\end{itemize}
-	\item Closed-ended
-		\begin{itemize}
-			\item open-ended investment vehicle
-			\item no new shares can be created
-			\item can be traded at all times
-		\end{itemize}
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Other advantages}
-\begin{itemize}[<+-| alert@+>]
-	\item The basic model is easy to understand
-	\item They have expanded into sectors, international markets and a bewildering variety of new areas (see below)
-	\item There can be a tax advantage
-	\item Costs are low
-	\item Cash drag is avoided
-	\item Can be sold short
-	\item The NAV is posted every 15 seconds in the US
-\end{itemize}
-\end{frame}
-
-\begin{frame}{ETF list}
+\begin{frame}{Home bias}
 \begin{table}
 \begin{center}
-\rowcolors{1}{OliveGreen!20}{OliveGreen!5}
-\begin{tabular}{l p{8cm} l}
-\textbf{Ticker} & \textbf{Description} & \textbf{Cost}\\
+\rowcolors{1}{MyBrown!20}{MyBrown!5}
+\begin{tabular}{l p{2cm} p{2cm} p{2cm} p{2cm} }
+& 	\multicolum{3}{c}{Portfolio weights} &\\
+      &	\textbf{US} & \textbf{Japan} & \textbf{UK} & \textbf{Weight}}\\
 \hline
-SPY & S\&P 500 index & 0.09\\
-TLT & 10-year plus government & 0.15\\ 
-EEM & MSCI emerging markets & 0.48\\
-GLD & Gold index & 0.40\\
-EWJ & MSCI Japan & 0.48\\
-XLK & Technology sector & 0.15\\
-LQD & Investment grade corporate bond & 0.15\\
-RSP & Equal-weight S\&P 500 & 0.48\\
-USO & US oil & 0.66\\
-QQQ & NASDAQ technology & 0.20\\
-BOND&  Pimco active bond investment & 0.55\\
+US & 0.94 & 0.01 & 0.06 0.48\\
+Japan & 0.03 & 0.98 & 0.05 & 0.27\\
+UK & 0.01 & 0.00 & 0.82 & 0.14 \\
+France & 0.01 & 0.00 & 0.03 & 0.04\\
+Germany & 0.01 & 0.00 & 0.04 & 0.04\\
+Canada & 0.1 & 0.00 & 0.01 & 0.04
 \end{tabular}
 \end{center}
 \end{table}
+December 1989 estmated holdings (French and Poterba (1991).  Weight is domestic stock market weight as percentage of big five
+\end{frame}	
+
+\begin{frame}{Reasons for Home Bias}
+	There are five main reasons put forward for \emph{home bias}
+\begin{itemize}[<+-| alert@+>]
+		\pause
+	\item Exchange rate risk: Hau and Rey (2004)
+	\item Transaction costs: Tesar and Werner (1996)
+	\item Information asymmetries: Aherene et al (2004)
+	\item Geographical proximity: Portes and Rey (2005)
+	\item Behavioural bias: Huberman (2001)
+\end{itemize}
 \end{frame}
-	
-\section{Mechanics of ETF}
-\begin{frame}{How they work}
-For the physical ETF
+
+\begin{frame}{Exchange Rate Risk}
+	Exchange rates are an additional risk for international investors
+\begin{itemize}[<+-| alert@+>]
+		\pause
+	\item Exchange rate can be hedged
+		\begin{itemize}
+			\item active or passive investment (evidence suggest thta active investment is not successful
+		\end{itemize}
+	\item Exchange rate can be treated as an additional \emph{asset class}
+		\begin{itemize}
+			\item \emph{currency overlay}
+		\end{itemize}
+\end{itemize}
+\end{frame
+		\pause
+	\item Weighting assets according to capitalisation
+		\begin{itemize}
+			\item it may be difficult to determine the size of the market
+			\item what is the investment universe?
+		\end{itemize}
+	\item Optimising time series according to mean-variance
+		\begin{itemize}
+			\item requires historic data for returns
+		\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}{Globalisation}
+The process of globalisation has called the benefits of international diversification into question
+\begin{itemize}[<+-| alert@+>]
 \pause
-\begin{itemize}[<+-| alert@+>]
-	\item An \emph{Authorised Participant} will deliver the underlying assets to the ETF in exchange for shares
-		\begin{itemize}
-			\item between 50,000 and 200,000 are usually creeated - 75,000 seems to be the most frequent
-		\end{itemize}
-	\item Retail and Institutional investors can then purchase the shares through the stock exchange
-	\item The AP can create or redeem shares if there is any divergence between the price of the ETF in the secondary market and the underlying asset value
+\item Opening up of countries to trade has brought economic cycles more into synchroisation
+\item Opening of capital markets has allowed capital to flow freely from one country to another. 
+\item Struture is more \emph{risk-on/risk-off}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Standard ETF structure}
-%\resizebox{4cm}{!}{
-\begin{center}
-\begin{figure}
-\begin{tikzpicture}[transform canvas={scale=0.9}]
-%  \draw[very thin, color = gray](0, 0) grid (12, 7);
-\node at (2, 2.5) (Stock Exchange) [block] {Stock Exchange};  
-\node at (10, 2.5) [block] {Retail and Institutional Investors};  
-\node at (2, 6.5) [block] {Authorised Participant};  
-\node at (10, 6.5) [block] {ETF};  
-% AP - stock exchange
-\draw [arrow2] (1, 3.5) -- node[left] {Cash} (1, 5.5);
-\draw [arrow2] (3, 5.5) -- node[right] {ETF} (3, 3.5);
-% Primary Market - creation
-\node at (6, 8.5) {\textbf{PRIMARY MARKET}}; 
-\node at (6, 8) {\textbf{Creation}}; 
-\draw [arrow] (3.5, 7) -- node[above] {Creation Unit} (8.5, 7);
-\draw [arrow] (8.5, 7.1) -- node[below] {Portfolio of Securities} (3.5, 7.1);
-% Primary market - redemption
-\node at (6, 5.1) {\textbf{Redemption}}; 
-\draw [arrow] (3.5, 6) -- node[above] {Creation Unit} (8.5, 6);
-\draw [arrow] (8.5, 5.9) -- node[below] {Portfolio of Securities} (3.5, 5.9);
-% Secondary Market
-\node at (6, 0.8) {\textbf{SECONDARY MARKET}}; 
-\draw [arrow2] (3.5, 2.5) -- node[above] {Cash} (8.5, 2.5);
-\draw [arrow2] (8.5, 1.5) -- node[below] {ETF} (3.5, 1.5);
-\end{tikzpicture}
-%\caption{ETF: Primary and Secondary markets: Researve Bank of Australia (March 2011 Bulletin)}
-\end{figure}
-\end{center}
+\begin{frame}{Country vs assets}
 \end{frame}
 
-\begin{frame}{Different Types}
-	There are two standard models of the ETF: 
+\begin{frame}{International Factors}
+	MSCI study of international Factors 
 	\pause
 \begin{itemize}[<+-| alert@+>]
-	\item Physical ETF: the Authorised Participant will exchange underlying securities or assets for \emph{creation units} with the sponsor
-		\begin{itemize}
-			\item these securities or assets form the assets of the ETF
-			\item the authorised participant can arbitrage the ETF and assets if there is a divergence in price
-		\end{itemize}
-	\item Synthetic ETF: the Authorised Participant will provide cash in exchange for shares
-		\begin{itemize}
-			\item the fund will use the money to purchase derivatives (usually swaps or futures) that will replicate the desired assets
-			\item artbiotrage is more complex
-			\item underlying assets are not held by the fund  
-		\end{itemize}
+	\item Study of MSCI ex-US index
+	\item A review of risk and return of international factors
+	\item Relationship between US and international factors
+	\item Relationship between factors and active managers
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Other Assets: Bonds}
-	Bond  ETF have been established
+\begin{frame}{International Factors 2}
+	The six MSCI International Factors are
 	\pause
 \begin{itemize}[<+-| alert@+>]
-	\item First bond ETF were produced in 2000 and were designed to follow Goldman Sachs and Lehman Brothers bond indices
-	\item They hold a range of bonds that have the average maturity of the index
-	\item The ETF may have more liquidity than the underlying (particuarly in the corporate sector)
-	\item There is some concern about the techniques that have been used to create bond indices
-		\begin{itemize}
-			\item Countries with the largest amount of outsanding bonds have the largest amount of debt
-		\end{itemize}
+	\item Low volatility
+	\item Size
+	\item Momentum
+	\item Quality
+	\item Dividends
+	\item Value
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Other Assets: Commodities}
-	Commofity  ETF have been established
-	\pause
-\begin{itemize}[<+-| alert@+>]
-	\item These are generally synthetic ETF, using futures to gain exposure to the underying assets
-	\item There has been concern expressed about the \emph{financialisation} of commodity markets
-	\item It has been suggested (though evidence is mixed) that this is partly the reason for the increase in commodity prices in the period 2000 - 2005
-	\item Currency ETF tend to hold money market products
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Positive and negative multiples}
-	The first of these ETF to promise positive or negaive multiples of an index was created in 2006 in the US. 
-\begin{itemize}[<+-| alert@+>]
-		\pause
-	\item Charupat and Peter Miu, 2011
-	\item Mainly chosen by speculative accounts (average holding period is 14 days compared to over 40 for conventional ETF)
-	\item Much smaller amounts are traded (though the multiple means that smaller amonts can generate the same return)
-	\item They promise to track the \emph{daily} return, returns beyond 2 weeks vary substantially
-	\item Rebalancing is requied by the fund each day to ensure that the daily return can be achieved
-\end{itemize}
-\end{frame}
-
-
-
-\section{Issues and questions}
-\begin{frame}{Liqidity}
-	One of the great attractions of ETF is their \emph{liqudity}
-\begin{itemize}[<+-| alert@+>]
-		\pause
-	\item It is easy for retail investors to purchase blocks of diversified securities at a low cost
-	\item It is also easy and cheap for institutional investors to purchase ETF as a way of hedging and speculating in securities and assets where the underlying may be less liquid
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Will liquidity remain in a crisis?}
-	There is a concern that liquidity will disappear in a crisis
-	\pause
-\begin{itemize}[<+-| alert@+>]
-	\item Bond funds are particularly vulnerable
-	\item 
-\end{itemize}
-\end{frame}
-
-
-
-\begin{frame}{Price discovery}
-	The structure of the ETF is designed to ensure that there is pricing efficiency. However, (as we have seen) there can be divergences between the values of underlying assets and the ETF
-\begin{itemize}[<+-| alert@+>]
-		\pause
-	\item Liquidity
-	\item Cost of arbitrage
-	\item Non-anticipation of index adjustment
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Divergence from underlying assets}
-	There is a concern that funds could diverge from underlying assets - particularly at times of illiquidity
-\begin{itemize}[<+-| alert@+>]
-		\pause
-	\item Divergence is usually very small and swiftly eliminated by arbitrage
-	\item Divergence is much larger for country funds than domestic 
-	\item Divergence is greater for synthetic relative to \emph{plain vanilla}
-\end{itemize}
-\end{frame}
-
-\begin{frame}{International funds}
-	Divergence of international ETF from underlying assets may be due to 
-\begin{itemize}[<+-| alert@+>]
-		\pause
-	\item Asynchronity
-	\item Taxes
-	\item Ownership restrictions
-	\item The link between premium and liquidity is negative for the US and postitive for international funds
-\end{itemize}
-Ackert and Tian (2008)
-\end{frame}
-
-\begin{frame}{International Fund Premium}
+\begin{frame}{International Factors Results 1}
 \begin{table}
 \begin{center}
-\rowcolors{1}{OliveGreen!20}{OliveGreen!5}
-\begin{tabular}{l r r r}
-\textbf{Name} & \textbf{Mean} & \textbf{Std.Dev} & \textbf{Auto-corr}\\
+\rowcolors{1}{MyBrown!20}{MyBrown!5}
+\begin{tabular}{l p{2cm} p{2cm} p{2cm} p{2cm} }
+	\textbf{Factor} & \textbf{Ret (Int)} & \textbf{Vol} & \textbf{Ret (US)} & \textbf{Vol}\\
 \hline
-S\&P 500 & 0.0282 & 0.1555 & 0.0752 \\
-Australia & 0.2426  & 0.9385 & 0.3745\\
-Canada & 0.2776   & 0.7658 & 0.3104 \\
-Japan  & 0.2006    & 0.9033 & 0.1095 \\
-Hong Kong & -0.0527 & 1.2049 & 0.4621 \\
-Mexico & -0.1779 & 0.7888 & 0.2608\\
-S. Africa & 0.2298 & 0.5636 & 0.2843\\
-S. Korean & 0.1545 & 1.3244 & 0.2229
+Low vol& 9.5& 11.8& 7.8& 11.0\\
+Size & 8.2& 17.2& 8.3& 17.0\\
+Momentum& 6.9& 16.0& 9.4& 14.2\\
+Quality& 7.8& 16.6& 6.8& 13.2\\
+High Dividend& 7.3& 17.5& 7.6& 12.8 \\
+Value& 8.3& 18.7& 8.8& 16.7\\
+Benchmark& 5.7& 16.7& 6.4& 14.2
 \end{tabular}
 \end{center}
 \end{table}
-Ackert and Tian (2008)
+MSCI May 2001 to Sep 2017
 \end{frame}
 
-\begin{frame}{US, Developed and Emerging}
+
+\begin{frame}{International Factors Results 2}
 \begin{table}
 \begin{center}
-\rowcolors{1}{OliveGreen!20}{OliveGreen!5}
-\begin{tabular}{l r r r}
-\textbf{Category} & \textbf{Mean} & \textbf{Std.Dev} & \textbf{Auto-corr}\\
+\rowcolors{1}{MyBrown!20}{MyBrown!5}
+	\begin{tabular}{p{2cm} | r r r r r r}
+	\multicolumn{7}{|c|}{World ex-US}\\
+	\textbf{Factor} & \textbf{Vol} & \textbf{Mom} & \textbf{Size} & \textbf{Qual} & \textbf{Div} & \textbf{Val} \\
 \hline
-US & 0.0154 & 0.1687 & 0.0342 \\
-Developed & 0.1689  & 0.8994 & 0.2095 \\
-Emerging & 0.0135   & 1.2158 & 0.4073 \\
-All  & 0.0917    & 0.7958 & 0.2151
+Vol & + & & + & & &  \\
+Mom & & + & & & & \\
+Size & - & & & & & \\
+Qual & + & & & & & \\
+Div & + & & & & & \\
+Value & - & & & & & + \\
+\hline
+World ex-US & - & & - & & &
 \end{tabular}
 \end{center}
 \end{table}
-Ackert and Tian (2008)
+MSCI May 2001 to Sep 2017
 \end{frame}
 
-\begin{frame}{Observations}
-	There are a number of observations from this study:
+\begin{frame}{International Factors Observations}
 \begin{itemize}[<+-| alert@+>]
-		\pause
-	\item Emerging ETF have wider sipursion of premia and discount so the average tends to be low
-	\item The relatinship between liquidity and pricing may be non-linear (it may be U shaped)
-	\item The relationship between liquidity and pricing may depend on the integration of the markets
-	\item There are fewer discounts because creating units is more costly than redeeming them
+	\item Minimum volatility and momentum are \emph{Global Factors}
+	\item Quality, dividends and size show little correlation with US factors
+	\item Investors looking for lower risk or trending markets are not internationally constrained
+	\item Fundamental factors are more local and hetrogenos
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Observations 2}
-	There are a number of observations from this study:
-\begin{itemize}[<+-| alert@+>]
-		\pause
-	\item Emerging ETF have greater serial correlation than the developed markets
-	\item This may be partly asynchromous activity 
-		\begin{itemize}
-			\item but some markets are the same time zone - Mexico 
-			\item some correlations remain for three or four days
-		\end{itemize}
-	\item There may be \emph{liquidity spill-overs}
-		\begin{itemize}
-			\item demand for ETF creates need to create new units of the underlying, adding liquidity in that market
-		\end{itemize}
-\end{itemize}
-\end{frame}
-% here may be more to say here.  Page 353 of ETF5.  Illiquidity can affect the premium. 
-
-\begin{frame}{Market efficiency}
-	There is a debate about the effect of ETF on market efficiency
-	\pause
-\begin{itemize}[<+-| alert@+>]
-	\item Bond and Garcis (2016) suggest that retail investors are \emph{noise traders} and that their migration to index funds will increase efficiency and provide fewer oppportunities for active managers
-	\item Others worry that rise of passive investment will limit price discover and reduce efficiency
-\end{itemize}
-\pause
-	\begin{block}{}
-		Remember the 100 dollar bill and Grossman \& Stiglitz
-	\end{block}
-\end{frame}
-
-\begin{frame}{Evidence on Price Discoery}
-\begin{itemize}[<+-| alert@+>]
-	\item Glosten, Nallareddy and Zou (2016) find that stocks incporporate information more quickly once they are in an ETF
-	\item Werners and Xue (2015) successfully test their assetion that price movement caused by ETF is informed (permanent) while price movement led by securities is noise (transitory)
-	\item Lee and Shridharan (2017) find that stocks owned b ETF have higher trading costs, high comovement with index and receive less analyst coverage
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Corporate Governance}
-	There is also a debate about the effect on corporate governance
-	\pause
-\begin{itemize}[<+-| alert@+>]
-	\item It is argued that passive holders of stock do not disciplimne management
-		\begin{itemize}
-			\item lack of stock selection
-			\item little incentive to vote if firm is a small part of a diversified portfolio
-		\end{itemize}
-	\item However, BlackRock have called for more active stance for passive funds and some research suggests the opposite
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Experiments with Corporate Governance}
-	How is the effect isolated?
-	\pause
-	\begin{block}{}
-		Firms that move from the bottom of the Russell 1000 to the top of the Russell 2000 are more likely to be held by passive index followers
-	\end{block}
-	\pause
-\begin{itemize}[<+-| alert@+>]
-	\item Boone and White (2015) find that firms wtih more passive institutional investment also increase their transparency of reporting
-	\item Appel, Gormely and Keim (2016) find positive effect on poison pills, restricctions on shareholds and fewer dual-class share structures
-\end{itemize}
-\end{frame}
-
-
-\begin{frame}{Performance Under Fire}
-	There is concern about ETF ability to function in a crisis. We have two cases that provide some informaton
-	\pause
-\begin{itemize}[<+-| alert@+>]
-	\item The \empn{Flash Crash} of 6 May 2010
-	\item The \emph{Volatility shock} of February 2018
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Flash Crash}
-\begin{itemize}[<+-| alert@+>]
-	\item The fragmentation of markets has increased the risk of liqudity gaps
-	\item at 2.32 6 May 2011 there was a sale of 75,000 e-mini contracts
-	\item Uncertainty about the quoted prices for the underlyhing assets
-	\item iShares Russell 1000 Growth ETF lost tack of the underlying assets from 2.45 to 3.10
-\end{itemize}
-\end{frame}
-
-\begin{frame}{iShares Russell 1000 Growth}
-<<NAV, fig.height=4.6, echo=FALSE, warning=FALSE>>=
-da <- read.csv('../Data/ETF3.csv', stringsAsFactors = FALSE)
-plot(da$x, da$ETF, type = 'l', main = "Russell 1000 Growth and NAV: Flash Crash", 
-     ylim = c(-80, 0.2), xlab = "Time", ylab = "Discount (percentage")
-abline(a = 0,  col = 'red')
-@
-\end{frame}
-
-\begin{frame}{Flash Crash and ETF}
-	The evidence suggests that ETF were much more affected by the Flash Crash than other securities
-\begin{itemize}[<+-| alert@+>]
-		\pause
-	\item They average draw-down was 0.24 compared to 0.08 for other products
-	\item The increase in volume traded of ETF was larger than that of other securities
-	\item These ETF and underlying securities that are usually very liquid
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Volatility Shock}
-\end{frame}
-
-\section{The Future}
-\begin{frame}{Factors}
-\end{frame}
-
-\begin{frame}{Investment universe}
-	\begin{itemize}
-		\item A spectrum of investment vehicles
-		\item Two poles: active and passive
-		\item Three poles: active, hybrid and passive
-	\end{itemize}
-\end{frame}
-
-\section{References}
 \begin{frame}{References}
-\begin{itemize}[<+-| alert@+>]
-	\item Markowitz, (1952), Portfolio Selection, The Journal of Finance, 7, 1, 77-91
-	\item Sharpe, (1964), Capital Asset Prices: A Theory of Market Equilibrium Under Conditions of Risk, Journal of Finance, 19, 3, 425-442
-	\item Grossman and Stiglitz
-	\item Malkiel (1995), Gruber (1996), Wermers (2000, 2003), and Jones
-and Wermers (2011)
-\item Charupat and Miu (2011) Multiple ETF
-\end{itemize}
-\end{frame}
-
-\begin{frame}{References 2}
-\begin{itemize}
-\item L.F. Ackert and Y.S. Tian, 2008, Arbitrage, Liquidity and Valuation of Exchange Traded Funds, Financial Markets, Institutions and Instruments, 17, 5, 331-363 
-\item Bond and Garcis, (2016), The Equilibrium of Indexing, University of Washington Working Paper 
-\item Israeli, Lee and Shrindharan, (2017), Is there a Dark Side to ETF? An Information Perspective, Review of Accounting Studies, 22, 3, 1048-1083
-\item Glosten, Hallareddy and Zou,  (2016), ETF Trading and Informational Efficiency of Underlying Securities, Duke University Working Paper)
-\item Wermers and Xue, (2015), Intra-day ETF Trading and the Volatility of the Underlying, University of Maryland Working Paper 
-\end{itemize}
-\end{frame}
-
+	\begin{itemize}
+		\item French and Poterba, (1991), 
+		\item Coeurbacier and Rey (2011)
+	\item Mishra (2012)
+	\item Berger and Warnock (2003)
+	\item Polwitoon and Tawatnuntachai (2006)
+	\item French and Poterba, (1991), Diversificatioin and International Equity Markets, The American Economic Review, 81, 2, 222-226
+	\end{itemize}
+	\end{frame}
 \end{document}
-
-
-
-
-
-
-
-\begin{frame}{The rise of ETF}
-\begin{itemize}[<+-| alert@+>]
-\pause
-\item \emph{Pooled investment vehicles} with AP
-\item \emph{Authorised participant} will keep ETF value close to that of underlying assets by being prepared to arbitrage the two
-\begin{itemize}
-\item can create new shares or redeem old ones
-\item this may not be easy for illiquid assets
-\end{itemize}
-\item First ETF began in 1993 (SPY)
-\item Middle of 2016 there are more than 1600 ETF on US exchanges with a value of more than \$2.2tn
-\item Competition is reducing prices 
-\item Bond ETF: \$60bn end of 2007 to \$600bn mid 2016
-\end{itemize}
-\end{frame}
-
-\begin{frame}{The rise of passive investment}
-\textbf{ETFGI}
-\begin{itemize}[<+-| alert@+>]
-\pause
-\item ETF assets were \$4.3tn in sep 2017 
-\item They were \$3.4tn at the end of 2016
-\item They were \$1.3tn at the end of 2010
-\item There is currently a price war (2-5bp in some places)
-\item Active management fees are down to 63bp in 2017 from 100bp in 2000
-\item This compares to the 2-20 for hedge funds
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Risk of ETF}
-The proliferation of ETF has raised some concerns
-\begin{itemize}[<+-| alert@+>]
-\pause
-\item Size and complexity
-\item Risk of \emph{performance chasing}
-% this means that 20\% fall in market would happen in 2 hours not 2 days.
-\item More volume in ETF than the underlying
-\item Some attention on bond ETF (illiquid to liquid test)
-\item Can be redeemed in kind
-\item US (SEC), Irish and French investigations are underway: there are already limits on leverage and the minimum amount of cash)
-% restriction on use of derivatives and maximum of 15\% illiquid funds
-\end{itemize}
-\end{frame}
 
 \section{Smart beta}
 \begin{frame}{Criticisms of index investment}
