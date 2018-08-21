@@ -13,6 +13,13 @@
 \usepackage{graphicx}
 \graphicspath{{../../Pictures/}}
 \usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\usepackage{adjustbox}
+\tikzstyle{block} = [rectangle, rounded corners, minimum width=3cm, 
+  minimum height= 2cm, text centered, text width = 2.8cm, draw = black, fill = green!30]
+\tikzstyle{arrow} = [thick, ->, >=stealth]
+\tikzstyle{arrow2} = [thick, <->, >=stealth]
 \bibliographystyle{agsm}
 % Specify base color
 \usecolortheme[named=MyBrown]{structure}
@@ -142,6 +149,7 @@ plot(x, fs(x, 0, 1), type = 'l', col = 'darkgreen', main = 'Distribution with Ku
      xlab = 'Return', ylab = 'frequency', ylim = c(0, 0.6))
 # http://stats.stackexchange.com/questions/43482/transformation-to-increase-kurtosis-and-skewness-of-normal-r-v
 lines(x, fs(x, 0, 1.5), type = 'l', lty = 2)
+legend('topleft', legend = c('Kurtosis', 'Normal'), col = c('black', 'darkgreen'), lty = c(2, 1))
 #lines(x, fs(x, -0.4, 1), type = 'l', lty = 2)
 @
 \end{frame}
@@ -158,12 +166,34 @@ plot(x, fs(x, 0, 1), type = 'l', col = 'darkgreen', main = 'Distribution with Sk
 # http://stats.stackexchange.com/questions/43482/transformation-to-increase-kurtosis-and-skewness-of-normal-r-v
 #lines(x, fs(x, 0, 1.5), type = 'l', lty = 3)
 lines(x, fs(x, -0.4, 1), type = 'l', lty = 2)
+legend('topleft', legend = c('Skew', 'Normal'), col = c('black', 'darkgreen'), lty = c(2, 1))
 @
 \end{frame}
 
-\begin{frame}{Black swans}
-\centering
-\includegraphics[scale = 0.2]{blackswan}
+\begin{frame}{Regimes of calm and crisis}
+	Another way to look at this is to say that there are two regimes
+	\pause
+\begin{itemize}[<+-| alert@+>]
+	\item Calm: where there is a normal distribution with a very small standard deviation
+	\item Crisis: where there is a normal distribution with a very large standard deviation
+	\item This is called a mixture distribution
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Mixture}
+<<mixture, fig.height=4.6, echo=FALSE, warning=FALSE>>=
+x <- seq(-3, 3, 0.1)
+fs = function(x, epsilon, delta){
+  dnorm(sinh(delta*asinh(x) - epsilon)) * delta*cosh(delta*asinh(x) - 
+    epsilon)/sqrt(1 + x^2)
+}
+plot(x, fs(x, -0.4, 1), type = 'l', col = 'darkgreen', main = 'Distributin with mixture', 
+     xlab = 'Return', ylab = 'frequency', ylim = c(0, 0.6))
+# http://stats.stackexchange.com/questions/43482/transformation-to-increase-kurtosis-and-skewness-of-normal-r-v
+#lines(x, fs(x, 0, 1.5), type = 'l', lty = 3)
+lines(x, fs(x, 0, 1.5), type = 'l', lty = 2)
+legend('topleft', legend = c('Crisis', 'Calm'), col = c('black', 'darkgreen'), lty = c(2, 1))
+@
 \end{frame}
 
 \begin{frame}{Unknown unknowns}
@@ -175,6 +205,11 @@ lines(x, fs(x, -0.4, 1), type = 'l', lty = 2)
 There are things we know; there are things we do not know; there are things that we do not know that we do not know
 \end{block}
 \end{textblock*}
+\end{frame}
+
+\begin{frame}{Black swans}
+\centering
+\includegraphics[scale = 0.2]{blackswan}
 \end{frame}
 
 %\begin{frame}{Expected values}
@@ -243,7 +278,7 @@ A number of additional risk factors have been found
 \section{Passive vs active investment}
 \begin{frame}{Economist and the one hundred dollar bill}
 \begin{center}
-\includegraphics[scale = 0.05]{oneHundredDollar}
+\includegraphics[scale = 0.2]{oneHundredDollar}
 \end{center}
 \end{frame}
 
@@ -251,9 +286,28 @@ A number of additional risk factors have been found
 The Efficient Market Hypothesis 
 \begin{itemize}[<+-| alert@+>]
 \pause
-\item Suggests that inefficiencies will be swiftly eliminated
 \item There are no \emph{systematic} deviations that allow \emph{supernormal profits} or returns that are more than just compensation for risk
-\item Are these effects (value, growth etc) inefficiencies or risk factors? 
+\item Suggests that any inefficiencies will be swiftly eliminated
+\item Are the anomolies or effects (value, growth etc) inefficiencies or risk factors? 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Active investment}
+Active funds try to take advantage of apparent inefficiencies.  There are a range of active funds:
+\begin{itemize}[<+-| alert@+>]
+\pause
+\item Hedge and other Alternative funds
+\begin{itemize}
+\item employ a range of strategies to capture \emph{alpha} or to find \emph{absolute returns} that are not correlated highly with the market 
+\end{itemize}
+\item \emph{Value Investment}
+\begin{itemize}
+\item Benjamin Graham
+\item Warren Buffett
+\item Berkshire Hathaway
+\item Security selection
+\item Stock, bond, commodity or country
+\end{itemize}
 \end{itemize}
 \end{frame}
 
@@ -264,27 +318,7 @@ The Efficient Market Hypothesis
 \end{center}
 \end{frame}
 
-\begin{frame}{Active investment}
-Active funds try to take advantage of these apparent inefficiencies
-\begin{itemize}[<+-| alert@+>]
-\pause
-\item \emph{Value Investment}
-\begin{itemize}
-\item Benjamin Graham
-\item Warren Buffett
-\item Berkshire Hathaway
-\end{itemize}
-\item Security selection
-\begin{itemize}
-\item Stock, bond, commodity or country
-\end{itemize}
-\item Hedge funds
-\begin{itemize}
-\item Range of strategies to capture \emph{alpha} or to find \emph{absolute returns} that are not correlated highly with the market 
-\end{itemize}
-\end{itemize}
-\end{frame}
-
+% does this go with the ETF explanation. 
 \begin{frame}{Grossman and Stiglitz}
 \begin{block}{}
 The impossibility of informationally efficient markets
@@ -297,7 +331,18 @@ The impossibility of informationally efficient markets
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Active management success}
+\section{Reasons for ETF growth}
+\begin{frame}{Basic ETF structure}
+\begin{itemize}[<+-| alert@+>]
+	\item They are can set up as unit trusts or mutual funds
+		\begin{itemize}
+			\item mutual funds allow reinvestment of dividends and loaning of securities and assets
+		\end{itemize}
+	\item 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Failure of Active Management}
 \begin{itemize}[<+-| alert@+>]
 \pause
 \item Many studies find that active managers are not successful on average
@@ -311,33 +356,307 @@ and Wermers (2011)
 \end{itemize}
 \end{frame}
 
-\section{Reasons for ETF growth}
-\begin{frame}{Failure of Active Management}
-\end{frame}
-
 \begin{frame}{Effective and efficient Vehicle}
+	They provide the best and open-ended and close-ended funds:
+	\pause
+\begin{itemize}[<+-| alert@+>]
+	\item Open-ended: 
+		\begin{itemize}
+			\item pooled investment vehicle to hold assets
+			\item new shares can be created
+			\item secondary market on closing price
+		\end{itemize}
+	\item Closed-ended
+		\begin{itemize}
+			\item pooled investment vehicle to hold assets
+			\item no new shares can be created
+			\item can be traded at all times
+		\end{itemize}
+\end{itemize}
 \end{frame}
 
+\begin{frame}{Other advantages}
+\begin{itemize}[<+-| alert@+>]
+	\item The basic model is easy to understand
+	\item They have expanded into sectors, international markets and a bewildering variety of new areas (see below)
+	\item There can be a tax advantage
+	\item Costs are low
+	\item Cash drag is avoided
+\end{itemize}
+\end{frame}
+
+\begin{frame}{ETF list}
+\begin{table}
+\begin{center}
+\rowcolors{1}{OliveGreen!20}{OliveGreen!5}
+\begin{tabular}{l p{8cm} l}
+\textbf{Ticker} & \textbf{Description} & \textbf{Cost}\\
+\hline
+SPY & S\&P 500 index & 0.09\\
+TLT & 10-year plus government & 0.15\\ 
+EEM & MSCI emerging markets & 0.48\\
+GLD & Gold index & 0.40\\
+EWJ & MSCI Japan & 0.48\\
+XLK & Technology sector & 0.15\\
+LQD & Investment grade corporate bond & 0.15\\
+RSP & Equal-weight S\&P 500 & 0.48\\
+USO & US oil & 0.66\\
+QQQ & NASDAQ technology & 0.20\\
+BOND&  Pimco active bond investment & 0.55\\
+\end{tabular}
+\end{center}
+\end{table}
+\end{frame}
+	
 \section{Mechanics of ETF}
 \begin{frame}{How they work}
+For the standard model
+\pause
+\begin{itemize}[<+-| alert@+>]
+	\item An \emph{Authorised Participant} will deliver the underlying assets to the ETF in exchange for shares
+		\begin{itemize}
+			\item between 50,000 and 200,000 are usually creeated - 75,000 seems to be the most frequent
+		\end{itemize}
+	\item Retail and Institutional investors can then purchase the shares through the stock exchange
+	\item The AP can create or redeem shares if there is any divergence between the price of the ETF in the secondary market and the underlying asset value
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Standard ETF structure}
+%\resizebox{4cm}{!}{
+\begin{center}
+\begin{figure}
+\begin{tikzpicture}[transform canvas={scale=0.9}]
+%  \draw[very thin, color = gray](0, 0) grid (12, 7);
+\node at (2, 2.5) (Stock Exchange) [block] {Stock Exchange};  
+\node at (10, 2.5) [block] {Retail and Institutional Investors};  
+\node at (2, 6.5) [block] {Authorised Participant};  
+\node at (10, 6.5) [block] {ETF};  
+% AP - stock exchange
+\draw [arrow2] (1, 3.5) -- node[left] {Cash} (1, 5.5);
+\draw [arrow2] (3, 5.5) -- node[right] {ETF} (3, 3.5);
+% Primary Market - creation
+\node at (6, 8.5) {\textbf{PRIMARY MARKET}}; 
+\node at (6, 8) {\textbf{Creation}}; 
+\draw [arrow] (3.5, 7) -- node[above] {Creation Unit} (8.5, 7);
+\draw [arrow] (8.5, 7.1) -- node[below] {Portfolio of Securities} (3.5, 7.1);
+% Primary market - redemption
+\node at (6, 5.1) {\textbf{Redemption}}; 
+\draw [arrow] (3.5, 6) -- node[above] {Creation Unit} (8.5, 6);
+\draw [arrow] (8.5, 5.9) -- node[below] {Portfolio of Securities} (3.5, 5.9);
+% Secondary Market
+\node at (6, 0.8) {\textbf{SECONDARY MARKET}}; 
+\draw [arrow2] (3.5, 2.5) -- node[above] {Cash} (8.5, 2.5);
+\draw [arrow2] (8.5, 1.5) -- node[below] {ETF} (3.5, 1.5);
+\end{tikzpicture}
+%\caption{ETF: Primary and Secondary markets: Researve Bank of Australia (March 2011 Bulletin)}
+\end{figure}
+\end{center}
 \end{frame}
 
 \begin{frame}{Different Types}
+	There are two standard models of the ETF: 
+	\pause
+\begin{itemize}[<+-| alert@+>]
+	\item Standard ETF: the Authorised Participant will exchange underlying securities or assets for cash
+		\begin{itemize}
+			\item these securities or assets form the assets of the ETF
+			\item the authorised participant can arbitrage the fund and assets if there is a divergence in price
+		\end{itemize}
+	\item Synthetic ETF: the Authorised Participant will provide cash in exchange for shares
+		\begin{itemize}
+			\item the fund will use the money to purchase derivatives (usually swaps or futures) that will replicate the desired assets
+			\item artbiotrage is more complex
+			\item underlying assets are not held by the fund  
+		\end{itemize}
+\end{itemize}
 \end{frame}
+
+\begin{frame}{Other Assets: Bonds}
+	Bond  ETF have been established
+	\pause
+\begin{itemize}[<+-| alert@+>]
+	\item First bond ETF were produced in 2000 and were designed to follow Goldman Sachs and Lehman Brothers bond indices
+	\item They hold a range of bonds that have the average maturity of the index
+	\item The ETF may have more liquidity than the underlying (particuarly in the corporate sector)
+	\item There is some concern about the techniques that have been used to create bond indices
+		\begin{itemize}
+			\item Countries with the largest amount of outsanding bonds have the largest amount of debt
+		\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Other Assets: Commodities}
+	Commofity  ETF have been established
+	\pause
+\begin{itemize}[<+-| alert@+>]
+	\item These are generally synthetic ETF, using futures to gain exposure to the underying assets
+	\item There has been concern expressed about the \emph{financialisation} of commodity markets
+	\item It has been suggested (though evidence is mixed) that this is partly the reason for the increase in commodity prices in the period 2000 - 2005
+	\item Currency ETF tend to hold money market products
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Positive and negative multiples}
+	The first of these ETF to promise positive or negaive multiples of an index was created in 2006 in the US. 
+\begin{itemize}[<+-| alert@+>]
+		\pause
+	\item Charupat and Peter Miu, 2011
+	\item Mainly chosen by speculative accounts (average holding period is 14 days compared to over 40 for conventional ETF)
+	\item Much smaller amounts are traded (though the multiple means that smaller amonts can generate the same return)
+	\item They promise to track the \emph{daily} return, returns beyond 2 weeks vary substantially
+	\item Rebalancing is requied by the fund each day to ensure that the daily return can be achieved
+\end{itemize}
+\end{frame}
+
+
 
 \section{Issues and questions}
 \begin{frame}{Liqidity}
+	One of the great attractions of ETF is their \emph{liqudity}
+\begin{itemize}[<+-| alert@+>]
+		\pause
+	\item It is easy for retail investors to purchase blocks of diversified securities at a low cost
+	\item It is also easy and cheap for institutional investors to purchase ETF as a way of hedging and speculating in securities and assets where the underlying may be less liquid
+\end{itemize}
 \end{frame}
+
+\begin{frame}{Will liquidity remain in a crisis?}
+	There is a concern that liquidity will disappear in a crisis
+	\pause
+\begin{itemize}[<+-| alert@+>]
+	\item Bond funds are particularly vulnerable
+	\item 
+\end{itemize}
+\end{frame}
+
+
 
 \begin{frame}{Price discovery}
+	The structure of the ETF is designed to ensure that there is pricing efficiency. However, (as we have seen) there are divergences between the values of underlying assets
+\begin{itemize}[<+-| alert@+>]
+		\pause
+	\item Liquidity
+	\item Cost of arbitrage
+	\item Non-anticipation of index adjustment
 \end{frame}
 
-\begin{from}{Risk}
+\begin{frame}{Divergence from underlying assets}
+	There is a concern that funds could diverge from underlying assets - particularly at times of illiquidity
+\begin{itemize}[<+-| alert@+>]
+		\pause
+	\item Divergence is usually very small and swiftly eliminated by arbitrage
+	\item Divergence is much larger for country funds than domestic 
+	\item Divergence is greater for synthetic relative to \emph{plain vanilla}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{International funds}
+	Divergence of international ETF from underlying assets may be due to 
+\begin{itemize}[<+-| alert@+>]
+		\pause
+	\item Asynchronity
+	\item Taxes
+	\item Ownership restrictions
+	\item The link between premium and liquidity is negative for the US and postitive for international funds
+\end{itemize}
+Ackert and Tian (2008)
+\end{frame}
+
+\begin{frame}{International Fund Premium}
+\begin{table}
+\begin{center}
+\rowcolors{1}{OliveGreen!20}{OliveGreen!5}
+\begin{tabular}{l r r r}
+\textbf{Name} & \textbf{Mean} & \textbf{Std.Dev} & \textbf{Auto-corr}\\
+\hline
+S\&P 500 & 0.0282 & 0.1555 & 0.0752 \\
+Australia & 0.2426  & 0.9385 & 0.3745\\
+Canada & 0.2776   & 0.7658 & 0.3104 \\
+Japan  & 0.2006    & 0.9033 & 0.1095 \\
+Hong Kong & -0.0527 & 1.2049 & 0.4621 \\
+Mexico & -0.1779 & 0.7888 & 0.2608\\
+S. Africa & 0.2298 & 0.5636 & 0.2843\\
+S. Korean & 0.1545 & 1.3244 & 0.2229
+\end{tabular}
+\end{center}
+\end{table}
+Ackert and Tian (2008)
+\end{frame}
+
+\begin{frame}{US, Developed and Emerging}
+\begin{table}
+\begin{center}
+\rowcolors{1}{OliveGreen!20}{OliveGreen!5}
+\begin{tabular}{l r r r}
+\textbf{Category} & \textbf{Mean} & \textbf{Std.Dev} & \textbf{Auto-corr}\\
+\hline
+US & 0.0154 & 0.1687 & 0.0342 \\
+Developed & 0.1689  & 0.8994 & 0.2095 \\
+Emerging & 0.0135   & 1.2158 & 0.4073 \\
+All  & 0.0917    & 0.7958 & 0.2151
+\end{tabular}
+\end{center}
+\end{table}
+Ackert and Tian (2008)
+\end{frame}
+
+\begin{frame}{Observations}
+	There are a number of observations from this study:
+\begin{itemize}[<+-| alert@+>]
+		\pause
+	\item Emerging ETF have wider sipursion of premia and discount so the average tends to be low
+	\item The relatinship between liquidity and pricing may be non-linear (it may be U shaped)
+	\item The relationship between liquidity and pricing may depend on the integration of the markets
+	\item There are fewer discounts because creating units is more costly than redeeming them
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Observations 2}
+	There are a number of observations from this study:
+\begin{itemize}[<+-| alert@+>]
+		\pause
+	\item Emerging ETF have greater serial correlation than the developed markets
+	\item This may be partly asynchromous activity 
+		\begin{itemize}
+			\item but some markets are the same time zone - Mexico 
+			\item some correlations remain for three or four days
+		\end{itemize}
+	\item There may be \emph{liquidity spill-overs}
+		\begin{itemize}
+			\item demand for ETF creates need to create new units of the underlying, adding liquidity in that market
+		\end{itemize}
+\end{itemize}
+\end{frame}
+% here may be more to say here.  Page 353 of ETF5.  Illiquidity can affect the premium. 
+
+\begin{frame}{Performance Under Fire}
+	There is concern about ETF ability to function in a crisis. We have two cases that provide some informaton:
+	\pause
+\begin{itemize}[<+-| alert@+>]
+	\item The \empn{Flash Crash} of 6 May 2010
+	\item The \emph{Volatility shock} of FEbruary 2018
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Flash Crash}
+\begin{itemize}[<+-| alert@+>]
+	\item The fragmentation of markets has increased the risk of liqudity gaps
+	\item at 2.32 6 May 2011 there was a sale of 75,000 e-mini contracts
+	\item Uncertainty about the quoted prices for the underlyhing assets
+	\item iShares Russell 1000 Growth ETF lost tack of the underlying assets from 2.45 to 3.10
+\end{itemize}
+\end{frame}
+
+\begin{itemize}{iShares Russell Growth}
+\end{frame}
+
+\begin[frame}{Volatility Shock}
 \end{frame}
 
 \section{The Future}
-\begin{frame}{Fazctors}
-\end{fame}
+\begin{frame}{Factors}
+\end{frame}
 
 \begin{frame}{Investment universe}
 	\begin{itemize}
@@ -347,9 +666,31 @@ and Wermers (2011)
 	\end{itemize}
 \end{frame}
 
+\section{References}
+\begin{frame}{References}
+\begin{itemize}[<+-| alert@+>]
+	\item Markowitz
+	\item Sharpe
+	\item Others? 
+	\item Grossman and Stiglitz
+	\item Malkiel (1995), Gruber (1996), Wermers (2000, 2003), and Jones
+and Wermers (2011)
+\item Charupat and Miu (2011) Multiple ETF
+\item L.F. Ackert and Y.S. Tian, 2008, Arbitrage, Liquidity and Valuation of Exchange Traded Funds, Financial Markets, Institutions and Instruments, volume 17,. No. 5, pp 331-363. 
 
+
+
+\end{itemize}
+\end{frame}
 
 \end{document}
+
+
+
+
+
+
+
 \begin{frame}{The rise of ETF}
 \begin{itemize}[<+-| alert@+>]
 \pause

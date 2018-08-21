@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\begin{document}
+\tikzstyle{block} = [rectangle, rounded corners, minimum width=2cm, 
+  minimum height= 1.8cm, text centered, text width = 1.8cm, draw = black, fill = brown!40];
+\tikzstyle{arrow} = [thick, ->, >=stealth]
+\tikzstyle{arrow2} = [thick, <->, >=stealth]
+\begin{figure}
+\begin{tikzpicture}[scale = 1.0]
+% structure 
+\draw[very thin, color = gray](0, 0) grid (12, 8);
+\draw[dashed] (3, 0) -- (3, 8);
+\draw[dashed] (6, 0) -- (6, 8);
+\node at (2, 8) {Stage One};
+\node at (6, 8) {Stage Two};
+\node at (10, 8) {Stage Three};
+% main blocks
+\node at (6, 6) [block] {Swap Counterparty};  
+\node at (2, 3) [block] {Authorised Participant};  
+\node at (6, 3) [block] {ETF};  
+\node at (10, 0) [block] {Swap Counterparty};  
+\node at (4, 0) [block] {Collateral Bassket};  
+%\node at (2, -4) [block] {Stock Exchange};
+%\node at (6, -4 [block] {Retail and Institutional Investors};
+% AP - stock exchange
+%\node at (6, 0.3) {\textbf{SECONDARY MARKET}}; 
+%\draw [arrow2] (8.5, 1.5) -- node[below] {ETF} (3.5, 1.5);
+%\draw[domain = 0.1:3.9, color = blue] plot(\x, {2 - 0.5*\x});
+\end{tikzpicture}
+\caption{Synthetic ETF: Primary and Secondary markets: Researve Bank of Australia (March 2011 Bulletin)}
+\end{figure}
+\end{document}

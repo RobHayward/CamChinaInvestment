@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\begin{document}
+\tikzstyle{block} = [rectangle, rounded corners, minimum width=3cm, 
+  minimum height= 2cm, text centered, text width = 2.8cm, draw = black, fill = brown!40];
+\tikzstyle{arrow} = [thick, ->, >=stealth]
+\tikzstyle{arrow2} = [thick, <->, >=stealth]
+\begin{figure}
+\begin{tikzpicture}[scale = 1.0]
+%  \draw[very thin, color = gray](0, 0) grid (12, 7);
+\node at (2, 2) (Stock Exchange) [block] {Stock Exchange};  
+\node at (10, 2) [block] {Retail and Institutional Investors};  
+\node at (2, 6) [block] {Authorised Participant};  
+\node at (10, 6) [block] {ETF};  
+% AP - stock exchange
+\draw [arrow2] (1, 3) -- node[left] {Cash} (1, 5);
+\draw [arrow2] (3, 5) -- node[right] {ETF} (3, 3);
+% Primary Market - creation
+\node at (6, 8.0) {\textbf{PRIMARY MARKET}}; 
+\node at (6, 7.5) {\textbf{Creation}}; 
+\draw [arrow] (3.5, 6.5) -- node[above] {Creation Unit} (8.5, 6.5);
+\draw [arrow] (8.5, 6.6) -- node[below] {Portfolio of Securities} (3.5, 6.6);
+% Primary market - redemption
+\node at (6, 4.6) {\textbf{Redemption}}; 
+\draw [arrow] (3.5, 5.5) -- node[above] {Creation Unit} (8.5, 5.5);
+\draw [arrow] (8.5, 5.4) -- node[below] {Portfolio of Securities} (3.5, 5.4);
+% Secondary Market
+\node at (6, 0.3) {\textbf{SECONDARY MARKET}}; 
+\draw [arrow2] (3.5, 2.5) -- node[above] {Cash} (8.5, 2.5);
+\draw [arrow2] (8.5, 1.5) -- node[below] {ETF} (3.5, 1.5);
+%\draw[domain = 0.1:3.9, color = blue] plot(\x, {2 - 0.5*\x});
+\end{tikzpicture}
+\caption{ETF: Primary and Secondary markets: Researve Bank of Australia (March 2011 Bulletin)}
+\end{figure}
+\end{document}
