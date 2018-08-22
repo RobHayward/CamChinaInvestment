@@ -5,7 +5,7 @@
 % See deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html for other themes
 \usepackage{caption}
 \usepackage{tikz}
- \usetikzlibrary{arrows,positioning}
+\usetikzlibrary{arrows,positioning}
 \usepackage[absolute, overlay]{textpos}
 \definecolor{MyBrown}{RGB}{180, 151, 90}
 \usepackage{multirow}
@@ -17,7 +17,7 @@
 \usetikzlibrary{shapes.geometric, arrows}
 \usepackage{adjustbox}
 \tikzstyle{block} = [rectangle, rounded corners, minimum width=3cm, 
-  minimum height= 2cm, text centered, text width = 2.8cm, draw = black, fill = green!30]
+  minimum height= 2cm, text centered, text width = 2.8cm, draw = black, fill = MyBrown!30]
 \tikzstyle{arrow} = [thick, ->, >=stealth]
 \tikzstyle{arrow2} = [thick, <->, >=stealth]
 \bibliographystyle{agsm}
@@ -70,7 +70,6 @@
 \includegraphics[height = 3.0in]{sharpe}
 \end{center}
 \end{frame}
-
 %\begin{frame}{Merton Miller}
 %\begin{center}
 %\includegraphics[height = 3.0in]{merton}
@@ -122,6 +121,70 @@ Some questions about MPT
 \end{itemize}
 \end{frame}
 % these may be expanded in slides or just discussion (pictures?)
+
+
+%\begin{frame}{Expected values}
+\begin{frame}{Capital Asset Pricing Model}
+\emph{Capital Asset Pricing Model} (CAPM) is an important part of the MPT framework 
+\pause
+\begin{itemize}[<+-| alert@+>]
+\item There is an public equity risk premium
+\item Returns on individual securities are related to this risk premium
+\item Beta $(\beta)$ is the measure of this relationship
+\begin{itemize}
+\item Covariance of asset returns with market returns
+\end{itemize}
+\item High beta is high risk 
+\item Low beta is low risk
+\end{itemize}
+\end{frame}
+
+\begin{frame}{CAPM}
+\begin{tikzpicture}[scale = 2] 
+%\draw[very thin, color = gray](0, 0) grid (5, 3);
+\draw [<->, thick] (0, 3) node (yaxis) [above] {$Return$} 
+  |- (5, 0) node (xaxis) [right] {$Risk$};
+\pause
+\node at (2.5, 1.75) [below right] {\scriptsize Market Portfolio};
+\draw [domain = 0.0:5.0, color = olive] plot(\x, {0.5 + 0.5*\x});
+\draw [fill = brown] (2.5, 1.75) circle [radius = 0.05];
+\pause
+\node at (2.5, 1.75) [above left] {$\beta$ = 1};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Other risk factors}
+A number of additional risk factors have been found
+\begin{itemize}[<+-| alert@+>]
+\pause
+\item \emph{Small cap companies} seem to generate high returns relative to their risk
+\item \emph{Value firm} appear to create high returns relative to their risk
+\item \emph{Growth firms} are believed to deliver low returns relative to their risk
+\item There are other \emph{risk factors} or anomalies that we will return to later
+\end{itemize}
+\end{frame}
+
+\begin{frame}{CAPM}
+\begin{tikzpicture}[scale = 2] 
+%\draw[very thin, color = gray](0, 0) grid (5, 3);
+\draw [<->, thick] (0, 3) node (yaxis) [above] {$Return$} 
+  |- (5, 0) node (xaxis) [right] {$Risk$};
+\pause
+\draw[domain = 0.0:5.0, color = olive] plot(\x, {0.5 + 0.5*\x});
+\draw [fill = brown] (2.5, 1.75) circle [radius = 0.05];
+%\node at (2.5, 1.75) [above left] {$\beta$ = 1};
+\node at (2.5, 1.75) [below right] {\scriptsize Market Portfolio};
+\pause
+\draw [fill = brown] (3.5, 2.5) circle [radius = 0.05];
+\node at (3.5, 2.5) [left] {\scriptsize Small Capitalisation};
+\pause
+\draw [fill = brown] (1.5, 1.5) circle [radius = 0.05];
+\node at (1.5, 1.5) [left] {\scriptsize Value};
+\pause
+\draw [fill = brown] (3.5, 2.0) circle [radius = 0.05];
+\node at (3.5, 2.0) [right] {\scriptsize Growth};
+\end{tikzpicture}
+\end{frame}
 
 \begin{frame}{Normal distribution}
 <<norm, fig.height=4.6, echo=FALSE, warning=FALSE>>=
@@ -187,12 +250,12 @@ fs = function(x, epsilon, delta){
   dnorm(sinh(delta*asinh(x) - epsilon)) * delta*cosh(delta*asinh(x) - 
     epsilon)/sqrt(1 + x^2)
 }
-plot(x, fs(x, -0.4, 1), type = 'l', col = 'darkgreen', main = 'Distributin with mixture', 
+plot(x, fs(x, -0.4, 1), type = 'l', col = 'darkgreen', main = 'Distribution with mixture', 
      xlab = 'Return', ylab = 'frequency', ylim = c(0, 0.6))
 # http://stats.stackexchange.com/questions/43482/transformation-to-increase-kurtosis-and-skewness-of-normal-r-v
 #lines(x, fs(x, 0, 1.5), type = 'l', lty = 3)
 lines(x, fs(x, 0, 1.5), type = 'l', lty = 2)
-legend('topleft', legend = c('Crisis', 'Calm'), col = c('black', 'darkgreen'), lty = c(2, 1))
+legend('topleft', legend = c('Calm', 'Crisis'), col = c('black', 'darkgreen'), lty = c(2, 1))
 @
 \end{frame}
 
@@ -212,91 +275,13 @@ There are things we know; there are things we do not know; there are things that
 \includegraphics[scale = 0.2]{blackswan}
 \end{frame}
 
-%\begin{frame}{Expected values}
-\begin{frame}{Capital Asset Pricing Model}
-\emph{Capital Asset Pricing Model} (CAPM) is an important part of the MPT framework 
-\pause
-\begin{itemize}[<+-| alert@+>]
-\item There is an public equity risk premium
-\item Returns on individual securities are related to this risk premium
-\item Beta $(\beta)$ is the measure of this relationship
-\begin{itemize}
-\item Covariance of asset returns with market returns
-\end{itemize}
-\item High beta is high risk 
-\item Low beta is low risk
-\end{itemize}
-\end{frame}
-
-\begin{frame}{CAPM}
-\begin{tikzpicture}[scale = 2] 
-%\draw[very thin, color = gray](0, 0) grid (5, 3);
-\draw [<->, thick] (0, 3) node (yaxis) [above] {$Return$} 
-  |- (5, 0) node (xaxis) [right] {$Risk$};
-\pause
-\node at (2.5, 1.75) [below right] {\scriptsize Market Portfolio};
-\draw [domain = 0.0:5.0, color = olive] plot(\x, {0.5 + 0.5*\x});
-\draw [fill = brown] (2.5, 1.75) circle [radius = 0.05];
-\pause
-\node at (2.5, 1.75) [above left] {$\beta$ = 1};
-\end{tikzpicture}
-\end{frame}
-
-\begin{frame}{Other risk factors}
-A number of additional risk factors have been found
-\begin{itemize}[<+-| alert@+>]
-\pause
-\item \emph{Small cap companies} seem to generate high returns relative to their risk
-\item \emph{Value firm} appear to generate high returns relative to their risk
-\item \emph{Growth firms} appear to generate low returns relative to their risk
-\item There are other \emph{risk factors} or anomalies that we will return to later
-\end{itemize}
-\end{frame}
-
-\begin{frame}{CAPM}
-\begin{tikzpicture}[scale = 2] 
-%\draw[very thin, color = gray](0, 0) grid (5, 3);
-\draw [<->, thick] (0, 3) node (yaxis) [above] {$Return$} 
-  |- (5, 0) node (xaxis) [right] {$Risk$};
-\pause
-\draw[domain = 0.0:5.0, color = olive] plot(\x, {0.5 + 0.5*\x});
-\draw [fill = brown] (2.5, 1.75) circle [radius = 0.05];
-%\node at (2.5, 1.75) [above left] {$\beta$ = 1};
-\node at (2.5, 1.75) [below right] {\scriptsize Market Portfolio};
-\pause
-\draw [fill = brown] (3.5, 2.5) circle [radius = 0.05];
-\node at (3.5, 2.5) [left] {\scriptsize Small Capitalisation};
-\pause
-\draw [fill = brown] (1.5, 1.5) circle [radius = 0.05];
-\node at (1.5, 1.5) [left] {\scriptsize Value};
-\pause
-\draw [fill = brown] (3.5, 2.0) circle [radius = 0.05];
-\node at (3.5, 2.0) [right] {\scriptsize Growth};
-\end{tikzpicture}
-\end{frame}
-
 \section{Passive vs active investment}
-\begin{frame}{Economist and the one hundred dollar bill}
-\begin{center}
-\includegraphics[scale = 0.2]{oneHundredDollar}
-\end{center}
-\end{frame}
-
-\begin{frame}{Market efficiency}
-The Efficient Market Hypothesis 
-\begin{itemize}[<+-| alert@+>]
-\pause
-\item There are no \emph{systematic} deviations that allow \emph{supernormal profits} or returns that are more than just compensation for risk
-\item Suggests that any inefficiencies will be swiftly eliminated
-\item Are the anomolies or effects (value, growth etc) inefficiencies or risk factors? 
-\end{itemize}
-\end{frame}
 
 \begin{frame}{Active investment}
 Active funds try to take advantage of apparent inefficiencies.  There are a range of active funds:
 \begin{itemize}[<+-| alert@+>]
 \pause
-\item Hedge and other Alternative funds
+\item Hedge and other Alternative Investment vehicles
 \begin{itemize}
 \item employ a range of strategies to capture \emph{alpha} or to find \emph{absolute returns} that are not correlated highly with the market 
 \end{itemize}
@@ -317,8 +302,22 @@ Active funds try to take advantage of apparent inefficiencies.  There are a rang
 \includegraphics[height = 3.0in]{BGsmall}
 \end{center}
 \end{frame}
+\begin{frame}{Economist and the one hundred dollar bill}
+\begin{center}
+\includegraphics[scale = 0.2]{oneHundredDollar}
+\end{center}
+\end{frame}
 
-% does this go with the ETF explanation. 
+\begin{frame}{Market efficiency}
+The Efficient Market Hypothesis 
+\begin{itemize}[<+-| alert@+>]
+\pause
+\item There are no \emph{systematic} deviations that allow \emph{supernormal profits} or returns that are more than just compensation for risk
+\item Suggests that any inefficiencies will be swiftly eliminated
+\item Are the anomolies or effects (value, growth etc) inefficiencies or risk factors? 
+\end{itemize}
+\end{frame}
+
 \begin{frame}{Grossman and Stiglitz}
 \begin{block}{}
 The impossibility of informationally efficient markets
@@ -331,14 +330,19 @@ The impossibility of informationally efficient markets
 \end{itemize}
 \end{frame}
 
-\section{Reasons for ETF growth}
-\begin{frame}{Basic ETF structure}
+\section{The ETF Revolution}
+\begin{frame}{Reasons for ETF growth}
 \begin{itemize}[<+-| alert@+>]
-	\item They are can set up as unit trusts or mutual funds
+\item They are a response to increased doubts about the benefits of active fund management
+\begin{itemize}
+\item performance of active managers
+\item fees
+\end{itemize}
+	\item They are an efficient vehicle for retail and professonal investors
 		\begin{itemize}
-			\item mutual funds allow reinvestment of dividends and loaning of securities and assets
+     \item they allow cheap access to a wide variety of diversified investments
+			\item their liquidity allows institutions to take large positions even when underlyng liquidity may be more limited
 		\end{itemize}
-	\item 
 \end{itemize}
 \end{frame}
 
@@ -360,17 +364,11 @@ and Wermers (2011)
 	They provide the best and open-ended and close-ended funds:
 	\pause
 \begin{itemize}[<+-| alert@+>]
-	\item Open-ended: 
-		\begin{itemize}
-			\item open-ened invstment vehicle
-			\item new shares can be created
-			\item secondary market on closing price
-		\end{itemize}
-	\item Closed-ended
-		\begin{itemize}
-			\item open-ended investment vehicle
-			\item no new shares can be created
-			\item can be traded at all times
+			\item As an open-ened invstment vehicle new shares can be created to ensure that ETF price is close to the Net Asset Value (NAV)
+			\item However, like closed-end funds, they can be traded continuously on the exchange rather that just at the end of the say like traditional open-ended funds
+			\item The strucutre means that dividends can be re-invested and shares can be lent to other institutions to enhance income
+		\begin{itemize} 
+		\item this is not the case with SPY which is set up as a mutual fund
 		\end{itemize}
 \end{itemize}
 \end{frame}
@@ -382,7 +380,7 @@ and Wermers (2011)
 	\item There can be a tax advantage
 	\item Costs are low
 	\item Cash drag is avoided
-	\item Can be sold short
+	\item They can be sold short
 	\item The NAV is posted every 15 seconds in the US
 \end{itemize}
 \end{frame}
@@ -390,9 +388,9 @@ and Wermers (2011)
 \begin{frame}{ETF list}
 \begin{table}
 \begin{center}
-\rowcolors{1}{OliveGreen!20}{OliveGreen!5}
+\rowcolors{1}{MyBrown!20}{MyBrown!5}
 \begin{tabular}{l p{8cm} l}
-\textbf{Ticker} & \textbf{Description} & \textbf{Cost}\\
+\textbf{Ticker} & \textbf{Description} & \textbf{Cost (bp)}\\
 \hline
 SPY & S\&P 500 index & 0.09\\
 TLT & 10-year plus government & 0.15\\ 
@@ -415,20 +413,40 @@ BOND&  Pimco active bond investment & 0.55\\
 For the physical ETF
 \pause
 \begin{itemize}[<+-| alert@+>]
-	\item An \emph{Authorised Participant} will deliver the underlying assets to the ETF in exchange for shares
+	\item An \emph{Authorised Participant} will deliver the underlying assets to the ETF in exchange for \emph{creation units}
 		\begin{itemize}
-			\item between 50,000 and 200,000 are usually creeated - 75,000 seems to be the most frequent
+			\item Creation units tend to be in the region of 50,000 shares
+			\item They can be between 20,000 and 600,000
 		\end{itemize}
 	\item Retail and Institutional investors can then purchase the shares through the stock exchange
 	\item The AP can create or redeem shares if there is any divergence between the price of the ETF in the secondary market and the underlying asset value
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Standard ETF structure}
+\begin{frame}{Different Types}
+	There are two standard models of the ETF: 
+	\pause
+\begin{itemize}[<+-| alert@+>]
+	\item Physical ETF: the Authorised Participant will exchange underlying securities or assets for \emph{creation units} with the ETF sponsor
+		\begin{itemize}
+			\item these securities or assets form the assets of the ETF
+			\item the authorised participant can arbitrage the ETF and assets if there is a divergence in price
+		\end{itemize}
+	\item Synthetic ETF: the Authorised Participant will provide cash in exchange for shares
+		\begin{itemize}
+			\item the fund will use the money to purchase derivatives (usually swaps or futures) that will replicate the desired assets
+			\item artbitrage is more complex
+			\item underlying assets are not held by the fund  
+		\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Physical  ETF structure}
 %\resizebox{4cm}{!}{
 \begin{center}
 \begin{figure}
-\begin{tikzpicture}[transform canvas={scale=0.9}]
+\begin{tikzpicture}
+%\scope[transform canvas={scale=0.9}]
 %  \draw[very thin, color = gray](0, 0) grid (12, 7);
 \node at (2, 2.5) (Stock Exchange) [block] {Stock Exchange};  
 \node at (10, 2.5) [block] {Retail and Institutional Investors};  
@@ -450,28 +468,14 @@ For the physical ETF
 \node at (6, 0.8) {\textbf{SECONDARY MARKET}}; 
 \draw [arrow2] (3.5, 2.5) -- node[above] {Cash} (8.5, 2.5);
 \draw [arrow2] (8.5, 1.5) -- node[below] {ETF} (3.5, 1.5);
+%\endscope
 \end{tikzpicture}
 %\caption{ETF: Primary and Secondary markets: Researve Bank of Australia (March 2011 Bulletin)}
 \end{figure}
 \end{center}
 \end{frame}
 
-\begin{frame}{Different Types}
-	There are two standard models of the ETF: 
-	\pause
-\begin{itemize}[<+-| alert@+>]
-	\item Physical ETF: the Authorised Participant will exchange underlying securities or assets for \emph{creation units} with the sponsor
-		\begin{itemize}
-			\item these securities or assets form the assets of the ETF
-			\item the authorised participant can arbitrage the ETF and assets if there is a divergence in price
-		\end{itemize}
-	\item Synthetic ETF: the Authorised Participant will provide cash in exchange for shares
-		\begin{itemize}
-			\item the fund will use the money to purchase derivatives (usually swaps or futures) that will replicate the desired assets
-			\item artbiotrage is more complex
-			\item underlying assets are not held by the fund  
-		\end{itemize}
-\end{itemize}
+\begin{frame}{Synthetic ETF Structure}
 \end{frame}
 
 \begin{frame}{Other Assets: Bonds}
@@ -511,8 +515,6 @@ For the physical ETF
 \end{itemize}
 \end{frame}
 
-
-
 \section{Issues and questions}
 \begin{frame}{Liqidity}
 	One of the great attractions of ETF is their \emph{liqudity}
@@ -532,8 +534,6 @@ For the physical ETF
 \end{itemize}
 \end{frame}
 
-
-
 \begin{frame}{Price discovery}
 	The structure of the ETF is designed to ensure that there is pricing efficiency. However, (as we have seen) there can be divergences between the values of underlying assets and the ETF
 \begin{itemize}[<+-| alert@+>]
@@ -550,7 +550,7 @@ For the physical ETF
 		\pause
 	\item Divergence is usually very small and swiftly eliminated by arbitrage
 	\item Divergence is much larger for country funds than domestic 
-	\item Divergence is greater for synthetic relative to \emph{plain vanilla}
+	\item Divergence is greater for synthetic relative to physical ETF
 \end{itemize}
 \end{frame}
 
@@ -563,13 +563,14 @@ For the physical ETF
 	\item Ownership restrictions
 	\item The link between premium and liquidity is negative for the US and postitive for international funds
 \end{itemize}
+\pause
 Ackert and Tian (2008)
 \end{frame}
 
 \begin{frame}{International Fund Premium}
 \begin{table}
 \begin{center}
-\rowcolors{1}{OliveGreen!20}{OliveGreen!5}
+\rowcolors{1}{MyBrown!20}{MyBrown!5}
 \begin{tabular}{l r r r}
 \textbf{Name} & \textbf{Mean} & \textbf{Std.Dev} & \textbf{Auto-corr}\\
 \hline
@@ -590,7 +591,7 @@ Ackert and Tian (2008)
 \begin{frame}{US, Developed and Emerging}
 \begin{table}
 \begin{center}
-\rowcolors{1}{OliveGreen!20}{OliveGreen!5}
+\rowcolors{1}{MyBrown!20}{MyBrown!5}
 \begin{tabular}{l r r r}
 \textbf{Category} & \textbf{Mean} & \textbf{Std.Dev} & \textbf{Auto-corr}\\
 \hline
@@ -608,8 +609,8 @@ Ackert and Tian (2008)
 	There are a number of observations from this study:
 \begin{itemize}[<+-| alert@+>]
 		\pause
-	\item Emerging ETF have wider sipursion of premia and discount so the average tends to be low
-	\item The relatinship between liquidity and pricing may be non-linear (it may be U shaped)
+	\item Emerging ETF have wider dispursion of premia and discount so the average tends to be low
+	\item The relationship between liquidity and pricing may be non-linear (it may be U shaped)
 	\item The relationship between liquidity and pricing may depend on the integration of the markets
 	\item There are fewer discounts because creating units is more costly than redeeming them
 \end{itemize}
@@ -680,20 +681,22 @@ Ackert and Tian (2008)
 \end{itemize}
 \end{frame}
 
-
-\begin{frame}{Performance Under Fire}
-	There is concern about ETF ability to function in a crisis. We have two cases that provide some informaton
-	\pause
+\begin{frame}{Crisis Performane}
+\begin{block}{}
+There is concern that liquidity may disappear at times of crisis. There are two case studie to assess
+\end{block}
+\pause
 \begin{itemize}[<+-| alert@+>]
-	\item The \empn{Flash Crash} of 6 May 2010
-	\item The \emph{Volatility shock} of February 2018
+\item The \emph{Flash Crash} 6 May 2010
+\item The \emph{Volatility Shock} Feb 2018
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Flash Crash}
 \begin{itemize}[<+-| alert@+>]
 	\item The fragmentation of markets has increased the risk of liqudity gaps
-	\item at 2.32 6 May 2011 there was a sale of 75,000 e-mini contracts
+\item DJIA Lost 998.5 (9\%) and recovered almost as swiftly
+	\item At 2.32 6 May 2011 there was a sale of 75,000 e-mini S\&P 500 contracts
 	\item Uncertainty about the quoted prices for the underlyhing assets
 	\item iShares Russell 1000 Growth ETF lost tack of the underlying assets from 2.45 to 3.10
 \end{itemize}
@@ -703,8 +706,8 @@ Ackert and Tian (2008)
 <<NAV, fig.height=4.6, echo=FALSE, warning=FALSE>>=
 da <- read.csv('../Data/ETF3.csv', stringsAsFactors = FALSE)
 plot(da$x, da$ETF, type = 'l', main = "Russell 1000 Growth and NAV: Flash Crash", 
-     ylim = c(-80, 0.2), xlab = "Time", ylab = "Discount (percentage")
-abline(a = 0,  col = 'red')
+     ylim = c(-80, 0.2), xlab = "Time", ylab = "Discount (percentage)")
+legend('bottom left', insert = 0.05, legend = 'ETF price discount to NAV', col = 'black')
 @
 \end{frame}
 
@@ -719,17 +722,44 @@ abline(a = 0,  col = 'red')
 \end{frame}
 
 \begin{frame}{Volatility Shock}
+\begin{block}{}
+There was an increase in US equity market volatility in February 2018 as rising US interest rates and some concern about inflation cofronted the positive effect of US tax cuts
+\end{block}
+\pause
+This \emph{Volatility Shock} exposed some of the more exotic ETF
 \end{frame}
+
+\begin{frame}{Volatility}
+Volatility is annualised risk
+\pause
+\begin{block}{}
+\begin{equation}
+vol = \sqrt{\frac{1}{N}\sum_{i = 1}^{i = N} (x_i - \bar{x})} * \sqrt{12}
+\end{equation}
+\end{block}
+\end{frame}
+
+\begin{frame}{The VIX Index}
+<<VIX, fig.height=4.6, echo=FALSE, warning=FALSE>>=
+da <- read.csv('./Data/VIX.csv')
+da$Date
+
 
 \section{The Future}
 \begin{frame}{Factors}
 \end{frame}
 
-\begin{frame}{Investment universe}
+\begin{frame}{ESG}
+\end{frame}
+
+\begin{frame}{Concluding Thoughts}
 	\begin{itemize}
-		\item A spectrum of investment vehicles
-		\item Two poles: active and passive
-		\item Three poles: active, hybrid and passive
+		\item ETF are a revolution in finance 
+\begin{itemize}
+\item Cost, liquidity and flexibility
+\end{itemize}
+		\item Some of the long-term effects on liquidity, corporate governance and price discovery are as yet unclear
+		\item The evolution that targets factors in fixed income and areas of ESG re-blurs the lines between active and passive investment
 	\end{itemize}
 \end{frame}
 
