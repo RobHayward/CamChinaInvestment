@@ -390,7 +390,7 @@ and Wermers (2011)
 \begin{center}
 \rowcolors{1}{MyBrown!20}{MyBrown!5}
 \begin{tabular}{l p{8cm} l}
-\textbf{Ticker} & \textbf{Description} & \textbf{Cost (bp)}\\
+\textbf{Ticker} & \textbf{Description} & \textbf{Cost}\\
 \hline
 SPY & S\&P 500 index & 0.09\\
 TLT & 10-year plus government & 0.15\\ 
@@ -515,8 +515,33 @@ For the physical ETF
 \end{itemize}
 \end{frame}
 
+\begin{frame}{Explosion of factors and ETFs}
+\begin{itemize}[<+-| alert@+>]
+\item The rise of thematic ETFs
+\begin{itemize}
+\item Millennials: consumer, entertainment and technology 
+\item Health and well-being: health spending, exercise etc
+\item Diversity: women on boards
+\item Disruption: technology effects on consumer behaviour and business models
+\item Silver: pinpointing the spending power and longevity of \emph{baby-boomers}
+\item HACK: companies that benefit from cyber security
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{MAGA ETF}
+\begin{center}
+\includegraphics[scale = 0.6]{trump}
+\end{center}
+\begin{itemize}
+\item Rank firms according to the way they benefit from GOP policy
+\item Long winners from EU breakup; short losers
+\end{itemize}
+\end{frame}
+
+
 \section{Issues and questions}
-\begin{frame}{Liqidity}
+\begin{frame}{Liqidity and Leverage}
 	One of the great attractions of ETF is their \emph{liqudity}
 \begin{itemize}[<+-| alert@+>]
 		\pause
@@ -525,12 +550,21 @@ For the physical ETF
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Will liquidity remain in a crisis?}
-	There is a concern that liquidity will disappear in a crisis
-	\pause
+\begin{frame}{How will liquidity and leverage respond in a crisis?}
 \begin{itemize}[<+-| alert@+>]
-	\item Bond funds are particularly vulnerable
-	\item 
+	\pause
+	\item There is a concern that liquidity will disappear in a crisis
+		\begin{itemize}
+	\item illiquid underlying assets may diverge from ETF
+	\item market-makers and AP may withdraw when pricing is uncertain
+	\item corporate bond ETF are seen as being particularly vunlerable
+		\end{itemize}
+	\item There is a concern that leverage can propogate a financial shock
+		\begin{itemize}
+	\item leverage can make funds vlunerable
+	\item leverage can cause \emph{feedback loops}
+\end{itemize}
+	\item The evidence from cast studies below is not that positive
 \end{itemize}
 \end{frame}
 
@@ -717,7 +751,7 @@ legend('bottom left', insert = 0.05, legend = 'ETF price discount to NAV', col =
 		\pause
 	\item They average draw-down was 0.24 compared to 0.08 for other products
 	\item The increase in volume traded of ETF was larger than that of other securities
-	\item These ETF and underlying securities that are usually very liquid
+	\item These are ETF and underlying securities that are usually very liquid
 \end{itemize}
 \end{frame}
 
@@ -741,12 +775,62 @@ vol = \sqrt{\frac{1}{N}\sum_{i = 1}^{i = N} (x_i - \bar{x})} * \sqrt{12}
 
 \begin{frame}{The VIX Index}
 <<VIX, fig.height=4.6, echo=FALSE, warning=FALSE>>=
-da <- read.csv('./Data/VIX.csv')
-da$Date
+da <- read.csv('../Data/VIX.csv')
+da$Date <- sub("[+]AC0", "", da$X.AD0)
+da$Date <- sub("[+]AC0", "", da$Date)
+da$Date <- as.Date(da$Date, format = "%Y-%m-%d")
+plot(da$Date, da$Adj.Close, type = 'l', xlab = "Date", ylab = "VIX index", main = "VIX Index 1990 to present")
+text(x = as.Date("2006-10-30"), y = 75, "Lehman \n Brothers")
+text(x = as.Date("1996-12-01"), y = 50, "LTCM-Russian \n default")
+text(x = as.Date("2012-04-01"), y = 55, "European Debt \n Crisis")
+@
+\end{frame}
 
+\begin{frame}{Betting against volatility}
+	Betting against volatility was a major play in the period 2016 to the end of 2017
+	\pause
+\begin{itemize}[<+-| alert@+>]
+	\item A number of \emph{inverse volatility} ETFs were created
+	\item Some of these were \emph{leveraged}
+	\item The most well-known of these was the \textbf{XIV} that was sold by Credit Suisse
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The Volatility Jump}
+<<VIX2, fig.height=4.6, echo=FALSE, warning=FALSE>>=
+da <- read.csv('../Data/VIX.csv')
+da$Date <- sub("[+]AC0", "", da$X.AD0)
+da$Date <- sub("[+]AC0", "", da$Date)
+da$Date <- as.Date(da$Date, format = "%Y-%m-%d")
+dacrisis <- subset(da, da$Date %in% as.Date("2016-01-01"):as.Date("2017-12-31"))
+plot(dacrisis$Date, dacrisis$Adj.Close, type = 'l', xlab = "Date", ylab = "VIX index",
+     main = "VIX Index 2016-17", xlim = c(as.Date("2016-01-01"), as.Date("2018-03-31")), 
+                                   ylim = c(0, 40))
+@
+\end{frame}
+
+\begin{frame}{The Volatility Jump}
+<<VIX3, fig.height=4.6, echo=FALSE, warning=FALSE>>=
+da <- read.csv('../Data/VIX.csv')
+da$Date <- sub("[+]AC0", "", da$X.AD0)
+da$Date <- sub("[+]AC0", "", da$Date)
+da$Date <- as.Date(da$Date, format = "%Y-%m-%d")
+dacrisis <- subset(da, da$Date %in% as.Date("2016-01-01"):as.Date("2018-03-31"))
+plot(dacrisis$Date, dacrisis$Adj.Close, type = 'l', xlab = "Date", ylab = "VIX index", main = "VIX Index 2016-18", xlim = c(as.Date("2016-01-01"), as.Date("2018-03-31")), 
+                                   ylim = c(0, 40)) 
+@
+\end{frame}
+
+\begin{frame}{XIV ETF Price}
+<<XIV, fig.height=4.6, echo=FALSE, warning=FALSE>>=
+da <- read.csv('../Data/XIV.csv')
+plot(da$x, da$XIV, type = 'l', xlab = "Date", main = "XIV ETF 2015 to Feb 2018", 
+     ylab = "XIV Price")
+@
+\end{frame}
 
 \section{The Future}
-\begin{frame}{Factors}
+\begin{frame}{The Future}
 \end{frame}
 
 \begin{frame}{ESG}
