@@ -15,9 +15,11 @@
 \usepackage{amsmath}
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows}
-\usepackage{adjustbox}
+%\usepackage{adjustbox}
 \tikzstyle{block} = [rectangle, rounded corners, minimum width=3cm, 
-  minimum height= 2cm, text centered, text width = 2.8cm, draw = black, fill = MyBrown!30]
+  minimum height= 2cm, text centered, text width = 2.8cm, draw = black, fill = brown!40]
+\tikzstyle{shape1} = [circle, minimum width = 2.8cm, fill = brown!40, text centered, 
+text width = 1.4cm, draw = black]
 \tikzstyle{arrow} = [thick, ->, >=stealth]
 \tikzstyle{arrow2} = [thick, <->, >=stealth]
 \bibliographystyle{agsm}
@@ -331,6 +333,34 @@ The impossibility of informationally efficient markets
 \end{frame}
 
 \section{The ETF Revolution}
+
+\begin{frame}{EFT Growth}
+<<ETFG, fig.height=4.6, echo=FALSE, warning=FALSE>>=
+	
+@
+\end{frame}
+
+\begin{frame}{Largest ETF funds}
+\begin{table}
+\begin{center}
+\rowcolors{1}{MyBrown!20}{MyBrown!5}
+\begin{tabular}{l r r r}
+\textbf{Symbol} & \textbf{Name} & \textbf{AUM} & \textbf{Vol}\\
+\hline
+SPY & SPDR S\&P 500 & 273b & 66.0m\\
+IVV & iShares core & 158b &  3.4m\\
+VTI & Vanguard Total Stock & 104b & 2.0m
+VOO & Vanguard S\&P 500 & 98b & 2.2m\\
+QQQ & Invesco tech & 71m & 33b\\
+EFA & iShares MSCI EAFE & 71m & 24b\\
+VEA & Vanguard FT Developed & 69b & 8m\\
+VWO & Vanguard Emerging & 59m & 13b
+\end{tabular}
+\end{center}
+\end{table}
+End of 2017
+\end{frame}
+
 \begin{frame}{Reasons for ETF growth}
 \begin{itemize}[<+-| alert@+>]
 \item They are a response to increased doubts about the benefits of active fund management
@@ -446,7 +476,7 @@ For the physical ETF
 \begin{center}
 \begin{figure}
 \begin{tikzpicture}
-%\scope[transform canvas={scale=0.9}]
+\scope[shift = {(-6cm, -5.0cm)}, transform canvas={scale=0.9}]
 %  \draw[very thin, color = gray](0, 0) grid (12, 7);
 \node at (2, 2.5) (Stock Exchange) [block] {Stock Exchange};  
 \node at (10, 2.5) [block] {Retail and Institutional Investors};  
@@ -468,16 +498,57 @@ For the physical ETF
 \node at (6, 0.8) {\textbf{SECONDARY MARKET}}; 
 \draw [arrow2] (3.5, 2.5) -- node[above] {Cash} (8.5, 2.5);
 \draw [arrow2] (8.5, 1.5) -- node[below] {ETF} (3.5, 1.5);
-%\endscope
+\endscope
 \end{tikzpicture}
-%\caption{ETF: Primary and Secondary markets: Researve Bank of Australia (March 2011 Bulletin)}
+%\caption{\small{ETF: Primary and Secondary markets: Researve Bank of Australia (March 2011 Bulletin)}}
 \end{figure}
 \end{center}
 \end{frame}
 
-\begin{frame}{Synthetic ETF Structure}
-\end{frame}
-
+%\begin{frame}{Synthetic ETF Structure}
+%\begin{center}
+%\begin{figure}
+%\begin{tikzpicture}
+%%\scope[shift = {(-6cm, -5.0cm)}, transform canvas={scale=0.9}]
+%% structure 
+%%\draw[very thin, color = gray](0, 0) grid (12, 8);
+%%\draw[dashed] (3, 1) -- (3, 8);
+%%\draw[dashed] (9, 1) -- (9, 8);
+%%\node at (2, 8) {Stage One};
+%%\node at (6, 8) {Stage Two};
+%\node at (10, 8) {Stage Three};
+% main blocks
+%\node at (6, 7) [block] {Swap Counterparty 1};  
+%\node at (1, 3.8) [block] {Authorised Participant};  
+%\node at (10, 5) [shape1]{Collateral Basket};
+%\node at (6, 3.8) [block] {ETF};  
+%\node at (10, 1) [block] {Swap Counterparty 2};  
+%\node at (6, 1) [block] {Retail and Institutional Investors};  
+%\node at (1, 1) [block] {Exchange};  
+%% the arrows
+%% Interest rate swap
+%\draw [arrow] (7, 3.8) -- node[below right, distance = 3cm] {Cash} (9, 5);
+%\draw [arrow] (9, 5) -- node[above right] {Return on collateral} (7, 7);
+%\draw [arrow] (6, 6.2) -- node[left] {Variable rate cash} (6, 4.6);
+%% Creatiom units 
+%\draw [arrow] (5, 4) -- node[above] {Index Return} (2, 4);
+%\draw [arrow] (2, 3.8) -- node[below] {Cash} (5, 3.8);
+%% AP arbitrage
+%\draw [arrow2] (1, 1.7) -- node[left] {Cash} (1, 3);
+%\draw [arrow2] (1.2, 1.7) -- node[right] {ETF} (1.2, 3.0);
+%% Secondary market
+%\draw [arrow2] (2, 1.2) -- node[above] {ETF} (5, 1.2);
+%\draw [arrow2] (2, 0.8) -- node[below] {Cash} (5, 0.8);
+% Return swap
+%\draw [arrow2] (7, 3.2) -- node[above right, distance = 2cm] {Variable rate cash} (10.4, 1.8);
+%\draw [arrow2] (6.8, 3) -- node[left] {Index return} (9.8, 1.8);
+%\end{tikzpicture}
+%%\endscope
+%%\caption{Synthetic ETF: Primary and Secondary markets: Researve Bank of Australia (March 2011 Bulletin)}
+%\end{figure}
+%\end{center}
+%\end{frame}
+%
 \begin{frame}{Other Assets: Bonds}
 	Bond  ETF have been established
 	\pause
@@ -834,6 +905,28 @@ plot(da$x, da$XIV, type = 'l', xlab = "Date", main = "XIV ETF 2015 to Feb 2018",
 \end{frame}
 
 \begin{frame}{ESG}
+	There has been increased attention to Environmental, Social and Governance issues in the investment community.  This appears to come from three main souces
+	\pause 
+\begin{itemize}[<+-| alert@+>]
+	\item Increased evidence that rather than returns vs ethics, ESG factors may help to improve performance
+	\item Experience of ESG-related losses
+		\begin{itemize}
+			\item Banking and GFC
+			\item BP and Deepwater Horizon
+			\item Volkswagen emmissions
+		\end{itemize}
+	\item Perceptiokn that \emph{millenials} will have a much greater focus on ESG issues as they become more prominent in the investmetn industry
+\end{itemize}
+\end{frame}
+
+\begin{frame}{ESG}
+	There are three main aspects of Environmental, Social and Governance investment
+\begin{itemize}[<+-| alert@+>]
+	\pause
+\item Screening for companies that may face difficulties
+\item Positively identifying companies that have qualities that will help them to outperform
+\item Active involvement in companies to change the way that they behave
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Concluding Thoughts}
