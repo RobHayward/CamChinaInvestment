@@ -2,8 +2,10 @@
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows}
 \begin{document}
-\tikzstyle{block} = [rectangle, rounded corners, minimum width=2cm, 
+%\tikzstyle{block} = [rectangle, rounded corners, minimum width=2cm, 
   minimum height= 1.5cm, text centered, text width = 1.8cm, draw = black, fill = brown!40]
+\tikzstyle{block} = [rectangle, rounded corners, minimum width=3cm, 
+  minimum height= 2cm, text centered, text width = 2.8cm, draw = black, fill = brown!40]
 \tikzstyle{shape1} = [circle, minimum width = 1.2cm, fill = brown!40, text centered, 
 text width = 1.4cm, draw = black]
 \tikzstyle{arrow} = [thick, ->, >=stealth]
@@ -27,21 +29,21 @@ text width = 1.4cm, draw = black]
 \node at (1, 1) [block] {Exchange};  
 % the arrows
 % Interest rate swap
-\draw [arrow] (7, 3.8) -- node[below right, distance = 3cm] {Cash} (9, 5);
-\draw [arrow] (9, 5) -- node[above right] {Return on collateral} (7, 7);
-\draw [arrow] (6, 6.2) -- node[left] {Variable rate cash} (6, 4.6);
+\draw [arrow] (7.5, 4) -- node[below right, distance = 3cm] {Cash} (9, 5);
+\draw [arrow] (9, 5) -- node[above right] {Return on collateral} (7.5, 7);
+\draw [arrow] (6, 6.0) -- node[left] {Variable rate cash} (6, 4.8);
 % Creatiom units 
-\draw [arrow] (5, 4) -- node[above] {Index Return} (2, 4);
-\draw [arrow] (2, 3.8) -- node[below] {Cash} (5, 3.8);
+\draw [arrow] (4.5, 4) -- node[above] {Index Return} (2.5, 4);
+\draw [arrow] (2.5, 3.8) -- node[below] {Cash} (4.5, 3.8);
 % AP arbitrage
-\draw [arrow2] (1, 1.7) -- node[left] {Cash} (1, 3);
-\draw [arrow2] (1.2, 1.7) -- node[right] {ETF} (1.2, 3.0);
+\draw [arrow2] (1, 1.9) -- node[left] {Cash} (1, 2.8);
+\draw [arrow2] (1.2, 1.9) -- node[right] {ETF} (1.2, 2.8);
 % Secondary market
-\draw [arrow2] (2, 1.2) -- node[above] {ETF} (5, 1.2);
-\draw [arrow2] (2, 0.8) -- node[below] {Cash} (5, 0.8);
+\draw [arrow2] (2.5, 1.2) -- node[above] {ETF} (4.5, 1.2);
+\draw [arrow2] (2.5, 0.8) -- node[below] {Cash} (4.5, 0.8);
 % Return swap
-\draw [arrow2] (7, 3.2) -- node[above right, distance = 2cm] {Variable rate cash} (10.4, 1.8);
-\draw [arrow2] (6.8, 3) -- node[left] {Index return} (9.8, 1.8);
+\draw [arrow2] (7.5, 2.9) -- node[above right, distance = 2cm] {Variable rate cash} (10.1, 2.0);
+\draw [arrow2] (7, 2.8) -- node[left] {Index return} (9.5, 2);
 \end{tikzpicture}
 \caption{Synthetic ETF: Primary and Secondary markets: Researve Bank of Australia (March 2011 Bulletin)}
 \end{figure}
