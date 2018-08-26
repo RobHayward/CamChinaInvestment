@@ -83,7 +83,7 @@
 Much is the same when the portfolio theory applied to international asset management
 \pause
 \begin{itemize}[<+-| alert@+>]
-\item The \emph{investment universe} becomes the whole worlf rather than one specific country
+\item The \emph{investment universe} becomes the whole world rather than one specific country
 \item The \emph{market portfolio} is all the assets in the world
 \item Questions about asset and indistry allocation are combined with those of region or country
 \item The structure of the asset management industry tends towards specialisation and fragmentation
@@ -153,6 +153,102 @@ December 1989 estmated holdings (French and Poterba, 1991).  Weight is domestic 
 			\item \emph{currency overlay}
 		\end{itemize}
 \end{itemize}
+\end{frame}
+
+\section{International Investment}
+
+\begin{frame}{Globalisation}
+The process of globalisation has called the benefits of international diversification into question
+\begin{itemize}[<+-| alert@+>]
+\pause
+\item Opening up of countries to trade has brought economic cycles more into synchroisation
+\item Opening of capital markets has allowed capital to flow freely from one country to another. 
+\item Struture is more \emph{risk-on/risk-off}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Country vs assets}
+Given globalisation the question of whether international diversification should concentrate on countries or industries has emerged
+\begin{itemize}[<+-| alert@+>]
+		\pause
+	\item Evidence suggests that industries have become more important but that countries still dominate
+	\item Baca et al (2000) and Cavaliga et al. (2000) find that industries have become a more important part of diversification
+	\item However, Brooke and De Negro (2002, 2004) find that much of the result is a consequence of the dot.com bubble and its deflation
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Industry vs Country}
+	Marcelo, Quiros and Martins (2013) study industry-country effects
+\begin{itemize}[<+-| alert@+>]
+		\pause
+	\item 
+\end{itemize}
+\end{frame}
+
+	
+\begin{frame}{Country Correlations}
+\begin{table}
+\begin{center}
+\rowcolors{1}{MyBrown!20}{MyBrown!5}
+\begin{tabular}{l r r r r r}
+\textbf{Country} & \textbf{BE} &  \textbf{CH} &  \textbf{DE} & \textbf{ES} & \textbf{GB} \\
+\hline
+BE & 1.0 & & & & \\
+CH & 0.7 & 1.0 & & & \\
+DE & 0.7 & 0.7 & 1.0 & & \\
+ES & 0.6 & 0.6 & 0.6 & 1.0 & \\
+GB & 0.5 & 0.5 & 0.6 & 0.5 & 1.0
+\end{tabular}
+\end{center}
+\end{table}
+Correlation of returns 1990 to 2008 (Marcelo et al. 2013)
+\end{frame}
+
+\begin{frame}{Industry Correlations}
+\begin{table}
+\begin{center}
+\rowcolors{1}{MyBrown!20}{MyBrown!5}
+\begin{tabular}{l r r r r r}
+\textbf{Industry} & \textbf{0001} &  \textbf{1000} & \textbf{2000} & \textbf{3000} & \textbf{9000} \\
+\hline
+0001 & 1.0 & & & & \\
+1000 & 0.8 & 1.0 & & & \\
+2000 & 0.8 & 0.9 & 1.0 & & \\
+3000 & 0.7 & 0.7 & 0.9 & 1.0 & \\
+9000 & 0.6 & 0.7 & 0.8 & 0.7 & 1.0
+\end{tabular}
+\end{center}
+\end{table}
+Correlation of returns 1990 to 2008 (Marcelo et al. 2013)
+\tiny
+\begin{itemize}
+\item 0001 oil and gas
+\item 1000 Basic Materiaks
+\item 2000 Industrials 
+\item 3000 Consumer 
+\item 9000 Technology
+\end{itemize}
+\end{frame}
+% 0001 oil and gas
+% 1000 Basic Materias
+% 2000 Industrials
+% 3000 Consumer 
+% 4000 health car
+% 5000 Consumer Services
+% 6000 Telecommunications
+% 7000 Utilities
+% 8000 Financials 
+% Technology
+
+\begin{frame}{Industry vs Country}
+<<industry, echo=FALSE, fig.height=4.6, fig.width=6.7, cache=TRUE>>=
+da <- read.csv('../Data/IndustryCountry.csv')
+plot(da$x, da$Industry.Effect, type = 'l', xlab = "Date", main = "Average Variance of Pure Country and Pure Industry Effects", 
+     ylab = "Variance")
+lines(da$x, da$Country.Effect, col = "Brown", lty = 2)
+legend('topleft', inset = 0.1, legend = c("Industry Effect", "Country Effect"), 
+       col = c("Black", "Brown"), lty = c(1, 2))
+@
 \end{frame}
 
 \section{Factor investment}
@@ -280,7 +376,7 @@ Arnott, Hsu and More tested a range of alternative (fundamental) weightings
 \begin{table}
 \begin{center}
 \rowcolors{1}{MyBrown!20}{MyBrown!5}
-\begin{tabular}{l r r r}
+\begin{tabular}{l r r r }
 \textbf{Portfolio/index} & \textbf{1980s} & \textbf{1990s} & \textbf{2000-04}\\
 \hline
 S\&P 500 & 17.7\% & 18.6\% & -2.1\% \\
@@ -620,29 +716,6 @@ R. Arnott studied performance of factors before and after publication
 %* Statistically significant
 %\end{frame}
 %
-\begin{frame}{Explosion of factors and ETFs}
-\begin{itemize}[<+-| alert@+>]
-\item The rise of thematic ETFs
-\begin{itemize}
-\item Millennials: consumer, entertainment and technology 
-\item Health and well-being: health spending, exercise etc
-\item Diversity: women on boards
-\item Disruption: technology effects on consumer behaviour and business models
-\item Silver: pinpointing the spending power and longevity of \emph{baby-boomers}
-\item HACK: companies that benefit from cyber security
-\end{itemize}
-\end{itemize}
-\end{frame}
-
-\begin{frame}{MAGA ETF}
-\begin{center}
-\includegraphics[scale = 0.6]{trump}
-\end{center}
-\begin{itemize}
-\item Rank firms according to the way they benefit from GOP policy
-\item Long winners from EU breakup; short losers
-\end{itemize}
-\end{frame}
 
 \begin{frame}{Fickle Factors}
 How resilient are these factors? 
@@ -835,20 +908,6 @@ Risk-parity vs traditional average 1946 to 2015: Dalio, Prince, Jensen (2015)
 \end{frame}
 
 
-\section{International Investment}
-
-\begin{frame}{Globalisation}
-The process of globalisation has called the benefits of international diversification into question
-\begin{itemize}[<+-| alert@+>]
-\pause
-\item Opening up of countries to trade has brought economic cycles more into synchroisation
-\item Opening of capital markets has allowed capital to flow freely from one country to another. 
-\item Struture is more \emph{risk-on/risk-off}
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Country vs assets}
-\end{frame}
 
 
 \begin{frame}{International Factors}
@@ -927,17 +986,7 @@ MSCI May 2001 to Sep 2017
 \end{itemize}
 \end{frame}
 
-\begin{frame}{References}
-	\begin{itemize}
-		\item French and Poterba, (1991), 
-		\item Coeurbacier and Rey (2011)
-	\item Mishra (2012)
-	\item Berger and Warnock (2003)
-	\item Polwitoon and Tawatnuntachai (2006)
-	\item French and Poterba, (1991), Diversificatioin and International Equity Markets, The American Economic Review, 81, 2, 222-226
-	\end{itemize}
-	\end{frame}
-\end{document}
+
 
 \section{The future}
 \begin{frame}{The future}
@@ -1198,4 +1247,15 @@ Ang, Goetzmann and Schaefer (2009) find the following factors explain the active
 \includegraphics[height = 3.0in]{factorbook}
 \end{center}
 \end{frame}
+
+\begin{frame}{References}
+	\begin{itemize}
+		\item Marcelo, Quiros and Martins, (2013), "The Role of Industry Factors During Volatile Times", Journal of International Financial Markets, Institutions and Money, 26, 273-290
+		\item Coeurbacier and Rey (2011)
+	\item Mishra (2012)
+	\item Berger and Warnock (2003)
+	\item Polwitoon and Tawatnuntachai (2006)
+	\item French and Poterba, (1991), Diversificatioin and International Equity Markets, The American Economic Review, 81, 2, 222-226
+	\end{itemize}
+	\end{frame}
 \end{document}
