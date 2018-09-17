@@ -39,7 +39,7 @@
   \end{frame}
 }
 % Title and author information
-\title{International Asset Allocation}
+\title{Global Asset Allocation}
 \author{Rob Hayward}
 \date{September 2018}
 \begin{document}

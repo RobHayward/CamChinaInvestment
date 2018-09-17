@@ -41,7 +41,7 @@ text width = 1.4cm, draw = black]
   \end{frame}
 }
 % Title and author information
-\title{Exchange Traded Funds}
+\title{ETF Product Design and Investment Management}
 \author{Rob Hayward}
 \date{September 2018}
 \begin{document}
@@ -336,7 +336,7 @@ Active funds try to take advantage of apparent inefficiencies.  There are a rang
 \begin{frame}{EFT Growth}
 <<ETFG, fig.height=4.6, echo=FALSE, warning=FALSE>>=
 da <- read.csv('../Data/ETFsize.csv')
-barplot(names.arg = da$Year, height = da$X, xlab = "Date", main = "The Increase In ETF Assess 2003 to 2017", ylab = "bn", col = 'Brown')	
+barplot(names.arg = da$Year, height = da$X, xlab = "Date", main = "The Increase In ETF Assets 2003 to 2017", ylab = "bn", col = 'Brown')	
 @
 \end{frame}
 

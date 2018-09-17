@@ -39,7 +39,7 @@
   \end{frame}
 }
 % Title and author information
-\title{International Asset Allocation}
+\title{Global Asset Allocation}
 \author{Rob Hayward}
 \date{September 2018}
 \begin{document}
@@ -503,7 +503,7 @@ R. Arnott studied performance of factors before and after publication
 
 \begin{frame}{Economist and the one hundred dollar bill}
 \begin{center}
-\includegraphics[scale = 0.5]{oneHundredDollar}
+\includegraphics[scale = 0.1]{oneHundredDollar}
 \end{center}
 \end{frame}
 
